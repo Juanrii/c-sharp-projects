@@ -14,6 +14,7 @@ namespace TP4_ListasEjercicio1
     {
         public Nodo pacienteSeleccionado = null;
         public Form1 frm1 = null;
+
         public ActualizarPaciente()
         {
             InitializeComponent(); 
@@ -21,9 +22,17 @@ namespace TP4_ListasEjercicio1
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            pacienteSeleccionado.nombre = this.inputNombre.Text;
+            ActualizarLista();
             this.Close();
             frm1.ArmarLista();
+        }
+
+        private void ActualizarLista()
+        {
+            pacienteSeleccionado.nombre = this.inputNombre.Text;
+            pacienteSeleccionado.apellido = this.inputApellido.Text;
+            pacienteSeleccionado.direccion = this.inputDireccion.Text;
+            pacienteSeleccionado.telefono= this.inputTel.Text;
         }
 
         private void ActualizarPaciente_Load(object sender, EventArgs e)
@@ -41,6 +50,11 @@ namespace TP4_ListasEjercicio1
             this.inputApellido.Text = pacienteSeleccionado.apellido;
             this.inputDireccion.Text = pacienteSeleccionado.direccion;
             this.inputTel.Text = pacienteSeleccionado.telefono;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

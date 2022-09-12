@@ -18,7 +18,7 @@ namespace TP4_ListasEjercicio1
         // Necesario para mostrar correctamente la lista
         public override string ToString()
         {
-            return string.Format($"{codigo} - {nombre} {apellido}");
+            return string.Format($"{codigo} - {nombre} {apellido} - Direc: {direccion} - Tel: {telefono}");
         }
 
     }

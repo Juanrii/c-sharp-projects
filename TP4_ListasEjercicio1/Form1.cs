@@ -32,6 +32,7 @@ namespace TP4_ListasEjercicio1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Al cargar formulario, se esconden la lista y el boton de ocultar
             listaPacientes.Hide();
             btnOcultar.Hide();
         }
@@ -40,11 +41,12 @@ namespace TP4_ListasEjercicio1
         {
             if (ValidarDatos())
             {
-                string codigo = this.inputCodigo.Text;
-                string nombre = this.inputNombre.Text;
-                string apellido = this.inputApellido.Text;
-                string direc = this.inputDireccion.Text;
-                string tel = this.inputTel.Text;
+                string codigo       = this.inputCodigo.Text;
+                string nombre       = this.inputNombre.Text;
+                string apellido     = this.inputApellido.Text;
+                string direc        = this.inputDireccion.Text;
+                string tel          = this.inputTel.Text;
+
                 lista.AgregarAlPrinicipio(codigo, nombre, apellido, direc, tel);
                 ArmarLista();
                 Limpiar();
@@ -55,6 +57,7 @@ namespace TP4_ListasEjercicio1
             }
         }
 
+        // Validar que el usuario complete todos los campos
         private bool ValidarDatos()
         {
             return (
@@ -73,6 +76,7 @@ namespace TP4_ListasEjercicio1
             this.inputApellido.Clear();
             this.inputDireccion.Clear();
             this.inputTel.Clear();
+            this.nodoSeleccionado = null;
         }
 
         public void ArmarLista()
@@ -101,6 +105,9 @@ namespace TP4_ListasEjercicio1
         {
             listaPacientes.Hide();
             btnOcultar.Hide();
+
+            // Se setea a null para que la proxima vez pida seleccionar un paciente
+            this.nodoSeleccionado = null;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -111,11 +118,17 @@ namespace TP4_ListasEjercicio1
             } 
             else
             {
-                lista.EliminarPaciente(nodoSeleccionado);
-                ArmarLista();
-                MessageBox.Show("El paciente fue eliminado", "Eliminado");
-            }
+                DialogResult decision = MessageBox.Show($"Esta seguro que desea eliminar el paciente con codigo: {nodoSeleccionado.codigo}", 
+                    "Advertencia", MessageBoxButtons.YesNo);
 
+                if (decision == DialogResult.Yes)
+                {
+                    lista.EliminarPaciente(nodoSeleccionado);
+                    ArmarLista();
+                    MessageBox.Show("El paciente fue eliminado", "Eliminado");
+                    this.nodoSeleccionado = null;
+                }
+            }
         }
 
         private void listaPacientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -135,7 +148,42 @@ namespace TP4_ListasEjercicio1
                 actualizar.frm1 = this;
                 actualizar.pacienteSeleccionado = nodoSeleccionado;
                 actualizar.Show();
+
+                // Se setea a null para que la proxima vez pida seleccionar un paciente
+                this.nodoSeleccionado = null;
             }
+        }
+
+        private void btnAgregarDespues_Click(object sender, EventArgs e)
+        {
+            if (nodoSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un paciente", "Error");
+            }
+            else
+            {
+                if (ValidarDatos())
+                {
+                    string codigo = this.inputCodigo.Text;
+                    string nombre = this.inputNombre.Text;
+                    string apellido = this.inputApellido.Text;
+                    string direc = this.inputDireccion.Text;
+                    string tel = this.inputTel.Text;
+                    string[] datosPaciente = { codigo, nombre, apellido, direc, tel };
+                    lista.AgregarDespues(nodoSeleccionado, datosPaciente);
+                    ArmarLista();
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar todos los datos del paciente", "Datos Incorrectos");
+                }
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
