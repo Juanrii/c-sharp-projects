@@ -88,7 +88,7 @@ namespace TP4_ListasEjercicio1
             this.listaPacientes.Location = new System.Drawing.Point(375, 62);
             this.listaPacientes.Name = "listaPacientes";
             this.listaPacientes.Size = new System.Drawing.Size(346, 225);
-            this.listaPacientes.TabIndex = 4;
+            this.listaPacientes.TabIndex = 11;
             this.listaPacientes.SelectedIndexChanged += new System.EventHandler(this.listaPacientes_SelectedIndexChanged);
             // 
             // btnAgregar
@@ -154,7 +154,7 @@ namespace TP4_ListasEjercicio1
             this.btnMostrar.Location = new System.Drawing.Point(228, 223);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(126, 23);
-            this.btnMostrar.TabIndex = 6;
+            this.btnMostrar.TabIndex = 9;
             this.btnMostrar.Text = "Mostrar Listado";
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.button1_Click);
@@ -164,7 +164,7 @@ namespace TP4_ListasEjercicio1
             this.btnOcultar.Location = new System.Drawing.Point(228, 263);
             this.btnOcultar.Name = "btnOcultar";
             this.btnOcultar.Size = new System.Drawing.Size(126, 23);
-            this.btnOcultar.TabIndex = 12;
+            this.btnOcultar.TabIndex = 10;
             this.btnOcultar.Text = "Ocultar Listado";
             this.btnOcultar.UseVisualStyleBackColor = true;
             this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
@@ -174,7 +174,7 @@ namespace TP4_ListasEjercicio1
             this.btnEliminarPaciente.Location = new System.Drawing.Point(228, 143);
             this.btnEliminarPaciente.Name = "btnEliminarPaciente";
             this.btnEliminarPaciente.Size = new System.Drawing.Size(126, 23);
-            this.btnEliminarPaciente.TabIndex = 13;
+            this.btnEliminarPaciente.TabIndex = 7;
             this.btnEliminarPaciente.Text = "Eliminar Paciente";
             this.btnEliminarPaciente.UseVisualStyleBackColor = true;
             this.btnEliminarPaciente.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -184,7 +184,7 @@ namespace TP4_ListasEjercicio1
             this.btnActualizar.Location = new System.Drawing.Point(228, 183);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(126, 23);
-            this.btnActualizar.TabIndex = 14;
+            this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar Paciente";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -194,7 +194,7 @@ namespace TP4_ListasEjercicio1
             this.btnAgregarDespues.Location = new System.Drawing.Point(228, 103);
             this.btnAgregarDespues.Name = "btnAgregarDespues";
             this.btnAgregarDespues.Size = new System.Drawing.Size(126, 23);
-            this.btnAgregarDespues.TabIndex = 15;
+            this.btnAgregarDespues.TabIndex = 6;
             this.btnAgregarDespues.Text = "Agregar Despues";
             this.btnAgregarDespues.UseVisualStyleBackColor = true;
             this.btnAgregarDespues.Click += new System.EventHandler(this.btnAgregarDespues_Click);
@@ -217,7 +217,7 @@ namespace TP4_ListasEjercicio1
             this.btnSalir.Location = new System.Drawing.Point(671, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(117, 30);
-            this.btnSalir.TabIndex = 17;
+            this.btnSalir.TabIndex = 12;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -247,7 +247,7 @@ namespace TP4_ListasEjercicio1
             this.Controls.Add(this.inputTel);
             this.Controls.Add(this.inputNombre);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Hospital UAI";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
