@@ -38,14 +38,32 @@ namespace TP4_ListasEjercicio1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string codigo = this.inputCodigo.Text;
-            string nombre = this.inputNombre.Text;
-            string apellido = this.inputApellido.Text;
-            string direc = this.inputDireccion.Text;
-            string tel = this.inputTel.Text;
-            lista.AgregarAlPrinicipio(codigo, nombre, apellido, direc, tel);
-            ArmarLista();
-            Limpiar();
+            if (ValidarDatos())
+            {
+                string codigo = this.inputCodigo.Text;
+                string nombre = this.inputNombre.Text;
+                string apellido = this.inputApellido.Text;
+                string direc = this.inputDireccion.Text;
+                string tel = this.inputTel.Text;
+                lista.AgregarAlPrinicipio(codigo, nombre, apellido, direc, tel);
+                ArmarLista();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar todos los datos del paciente", "Datos Incorrectos");
+            }
+        }
+
+        private bool ValidarDatos()
+        {
+            return (
+                this.inputCodigo.Text != "" &&
+                this.inputNombre.Text != "" &&
+                this.inputApellido.Text != "" &&
+                this.inputDireccion.Text != "" &&
+                this.inputTel.Text != ""
+                );
         }
 
         private void Limpiar()
@@ -57,7 +75,7 @@ namespace TP4_ListasEjercicio1
             this.inputTel.Clear();
         }
 
-        private void ArmarLista()
+        public void ArmarLista()
         {
             this.listaPacientes.Items.Clear();
             Listar(lista.nodoInicial);
@@ -94,8 +112,8 @@ namespace TP4_ListasEjercicio1
             else
             {
                 lista.EliminarPaciente(nodoSeleccionado);
-                MessageBox.Show("El paciente fue eliminado", "Eliminado");
                 ArmarLista();
+                MessageBox.Show("El paciente fue eliminado", "Eliminado");
             }
 
         }
@@ -114,7 +132,8 @@ namespace TP4_ListasEjercicio1
             else
             {
                 ActualizarPaciente actualizar = new ActualizarPaciente();
-                this.Hide();
+                actualizar.frm1 = this;
+                actualizar.pacienteSeleccionado = nodoSeleccionado;
                 actualizar.Show();
             }
         }

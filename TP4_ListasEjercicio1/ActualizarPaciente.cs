@@ -12,6 +12,8 @@ namespace TP4_ListasEjercicio1
 {
     public partial class ActualizarPaciente : Form
     {
+        public Nodo pacienteSeleccionado = null;
+        public Form1 frm1 = null;
         public ActualizarPaciente()
         {
             InitializeComponent(); 
@@ -19,11 +21,26 @@ namespace TP4_ListasEjercicio1
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            
+            pacienteSeleccionado.nombre = this.inputNombre.Text;
+            this.Close();
+            frm1.ArmarLista();
         }
 
         private void ActualizarPaciente_Load(object sender, EventArgs e)
         {
+            if (pacienteSeleccionado != null)
+            {
+                labelCodigo.Text = "Codigo de Paciente: " + pacienteSeleccionado.codigo;
+                ObtenerDatosPaciente();
+            }
+        }
+
+        private void ObtenerDatosPaciente()
+        {
+            this.inputNombre.Text = pacienteSeleccionado.nombre;
+            this.inputApellido.Text = pacienteSeleccionado.apellido;
+            this.inputDireccion.Text = pacienteSeleccionado.direccion;
+            this.inputTel.Text = pacienteSeleccionado.telefono;
         }
     }
 }

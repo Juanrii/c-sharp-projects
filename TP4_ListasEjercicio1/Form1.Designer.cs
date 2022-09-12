@@ -90,7 +90,7 @@ namespace TP4_ListasEjercicio1
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(252, 71);
+            this.btnAgregar.Location = new System.Drawing.Point(252, 95);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(126, 23);
             this.btnAgregar.TabIndex = 5;
@@ -148,7 +148,7 @@ namespace TP4_ListasEjercicio1
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(252, 261);
+            this.btnMostrar.Location = new System.Drawing.Point(252, 183);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(126, 23);
             this.btnMostrar.TabIndex = 6;
@@ -158,7 +158,7 @@ namespace TP4_ListasEjercicio1
             // 
             // btnOcultar
             // 
-            this.btnOcultar.Location = new System.Drawing.Point(252, 290);
+            this.btnOcultar.Location = new System.Drawing.Point(252, 212);
             this.btnOcultar.Name = "btnOcultar";
             this.btnOcultar.Size = new System.Drawing.Size(126, 23);
             this.btnOcultar.TabIndex = 12;
@@ -168,7 +168,7 @@ namespace TP4_ListasEjercicio1
             // 
             // btnEliminarPaciente
             // 
-            this.btnEliminarPaciente.Location = new System.Drawing.Point(252, 101);
+            this.btnEliminarPaciente.Location = new System.Drawing.Point(252, 125);
             this.btnEliminarPaciente.Name = "btnEliminarPaciente";
             this.btnEliminarPaciente.Size = new System.Drawing.Size(126, 23);
             this.btnEliminarPaciente.TabIndex = 13;
@@ -178,7 +178,7 @@ namespace TP4_ListasEjercicio1
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(252, 130);
+            this.btnActualizar.Location = new System.Drawing.Point(252, 154);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(126, 23);
             this.btnActualizar.TabIndex = 14;
