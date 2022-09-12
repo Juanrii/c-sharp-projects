@@ -14,7 +14,7 @@ namespace TP4_ListasEjercicio1
     {
         public ActualizarPaciente()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
