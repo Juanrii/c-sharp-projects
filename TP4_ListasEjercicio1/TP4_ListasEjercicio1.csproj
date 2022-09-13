@@ -58,6 +58,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD:TP4_ListasEjercicio1/TP4_ListasEjercicio1.csproj
     <Compile Include="ListaPacientes.cs" />
     <Compile Include="Nodo.cs" />
     <Compile Include="Program.cs" />
@@ -65,6 +66,12 @@
     <EmbeddedResource Include="ActualizarPaciente.resx">
       <DependentUpon>ActualizarPaciente.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <Compile Include="ListaAlumnos.cs" />
+    <Compile Include="Nodo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+>>>>>>> b8ef649 (WIP Ejer 2):TP4_ListasEjercicio2/TP4_ListasEjercicio2.csproj
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
