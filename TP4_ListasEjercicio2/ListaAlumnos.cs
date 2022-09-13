@@ -43,10 +43,5 @@ namespace TP4_ListasEjercicio2
             }
             
         }
-
-        internal void EliminarAlumno(Nodo nodoSeleccionado)
-        {
-
-        }
     }
 }

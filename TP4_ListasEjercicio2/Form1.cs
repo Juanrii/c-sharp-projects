@@ -104,25 +104,5 @@ namespace TP4_ListasEjercicio2
             this.inputTel.Text       = "";
             this.datosAlumno.Clear();
         }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (ValidarSeleccionado())
-                lista.EliminarAlumno(nodoSeleccionado);
-        }
-
-        private bool ValidarSeleccionado()
-        {
-            if (nodoSeleccionado != null)
-                return true;
-
-            MessageBox.Show("Debe seleccionar un alumno a eliminar", "Alumno no seleccionado");
-            return false;
-        }
-
-        private void listaAlumnos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            nodoSeleccionado = (Nodo) listaAlumnos.SelectedItem;
-        }
     }
 }
