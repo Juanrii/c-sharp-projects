@@ -86,7 +86,6 @@ namespace TP4_ListasEjercicio2
          */
         private void GenerarLista(Nodo nodoInicial)
         {
-
             if (nodoInicial != null)
             {
                 this.listaAlumnos.Items.Add(nodoInicial);
@@ -103,6 +102,27 @@ namespace TP4_ListasEjercicio2
             this.inputDireccion.Text = "";
             this.inputTel.Text       = "";
             this.datosAlumno.Clear();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (nodoSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un alumno", "Error");
+            } 
+            else
+            {
+                lista.EliminarAlumno(nodoSeleccionado);
+                LimpiarLista();
+                GenerarLista(lista.nodoInicial);
+                MessageBox.Show("El alumno fue eliminado", "Alumno Eliminado");
+                this.nodoSeleccionado = null;
+            }
+        }
+
+        private void listaAlumnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nodoSeleccionado = (Nodo) this.listaAlumnos.SelectedItem;
         }
     }
 }
