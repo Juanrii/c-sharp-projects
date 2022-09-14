@@ -59,8 +59,28 @@ namespace TP4_ListasEjercicio2
                     {
                         EliminarUltimo();
                     }
+                    else
+                    {
+                        Nodo alumnoAnterior = BuscarAnterior(nodoInicial, nodoSeleccionado);
+                        EliminarSeleccionado(alumnoAnterior);
+                    }
                 }
             }
+        }
+
+        private void EliminarSeleccionado(Nodo alumnoAnterior)
+        {
+            if (alumnoAnterior != null)
+                alumnoAnterior.siguiente = alumnoAnterior.siguiente.siguiente;
+        }
+
+        private Nodo BuscarAnterior(Nodo nodoInicial, Nodo nodoSeleccionado)
+        {
+            if (nodoInicial.siguiente != null && nodoInicial.siguiente.dni == nodoSeleccionado.dni)
+                return nodoInicial;
+            if (nodoInicial.siguiente != null)
+                return BuscarAnterior(nodoInicial.siguiente, nodoSeleccionado);
+            return null;
         }
 
         private void EliminarUltimo()
