@@ -45,6 +45,7 @@ namespace TP4_ListasEjercicio2
             this.btnRegistrarNuevo = new System.Windows.Forms.Button();
             this.listaAlumnos = new System.Windows.Forms.ListBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -182,11 +183,22 @@ namespace TP4_ListasEjercicio2
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(369, 134);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 42);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Actualizar \r\nSeleccionado";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.listaAlumnos);
             this.Controls.Add(this.btnRegistrarNuevo);
@@ -228,6 +240,7 @@ namespace TP4_ListasEjercicio2
         private System.Windows.Forms.Button btnRegistrarNuevo;
         private System.Windows.Forms.ListBox listaAlumnos;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button button1;
     }
 }
 

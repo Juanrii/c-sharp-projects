@@ -23,7 +23,7 @@ namespace TP4_ListasEjercicio2
 {
     public partial class Form1 : Form
     {
-        ListaAlumnos lista = new ListaAlumnos();
+        public ListaAlumnos lista = new ListaAlumnos();
         Nodo nodoSeleccionado;
         Dictionary<string, string> datosAlumno = new Dictionary<string, string>();
 
@@ -76,7 +76,7 @@ namespace TP4_ListasEjercicio2
             datosAlumno.Add("tel", this.inputTel.Text);
             datosAlumno.Add("fechaNacimiento", this.inputFecha.Text);
         }
-        private void LimpiarLista()
+        public void LimpiarLista()
         {
             this.listaAlumnos.Items.Clear();
         }
@@ -84,7 +84,7 @@ namespace TP4_ListasEjercicio2
         /*
          * Armar lista con el nodo inicial
          */
-        private void GenerarLista(Nodo nodoInicial)
+        public void GenerarLista(Nodo nodoInicial)
         {
             if (nodoInicial != null)
             {
@@ -123,6 +123,22 @@ namespace TP4_ListasEjercicio2
         private void listaAlumnos_SelectedIndexChanged(object sender, EventArgs e)
         {
             nodoSeleccionado = (Nodo) this.listaAlumnos.SelectedItem;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (nodoSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un alumno para actualizar", "Error");
+            }
+            else 
+            {
+                ActualizarAlumno actualizar = new ActualizarAlumno();
+                actualizar.frm1 = this;
+                actualizar.alumnoSeleccionado = nodoSeleccionado;
+                actualizar.Show();
+                this.nodoSeleccionado = null;
+            }
         }
     }
 }
