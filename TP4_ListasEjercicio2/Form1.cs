@@ -27,6 +27,8 @@ namespace TP4_ListasEjercicio2
         Nodo nodoSeleccionado;
         Dictionary<string, string> datosAlumno = new Dictionary<string, string>();
 
+        private bool isListVisible = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -44,9 +46,6 @@ namespace TP4_ListasEjercicio2
             }
         }
 
-        /*
-         * Validar que todos los campos sean cargados
-         */
         private bool ValidarDatos()
         {
             bool validar = (
@@ -112,11 +111,17 @@ namespace TP4_ListasEjercicio2
             } 
             else
             {
-                lista.EliminarAlumno(nodoSeleccionado);
-                LimpiarLista();
-                GenerarLista(lista.nodoInicial);
-                MessageBox.Show("El alumno fue eliminado", "Alumno Eliminado");
-                this.nodoSeleccionado = null;
+                DialogResult decision = MessageBox.Show($"Esta seguro que desea eliminar al alumno con DNI: {nodoSeleccionado.dni}?", 
+                    "Aviso", MessageBoxButtons.YesNo);
+
+                if (decision == DialogResult.Yes)
+                {
+                    lista.EliminarAlumno(nodoSeleccionado);
+                    LimpiarLista();
+                    GenerarLista(lista.nodoInicial);
+                    MessageBox.Show("El alumno fue eliminado", "Alumno Eliminado");
+                    this.nodoSeleccionado = null;
+                }
             }
         }
 
@@ -139,6 +144,72 @@ namespace TP4_ListasEjercicio2
                 actualizar.Show();
                 this.nodoSeleccionado = null;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (nodoSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un alumno para agregar despues", "Error");
+            }
+            else
+            {
+                if (ValidarDatos())
+                {
+                    CargarDatosAlumno();
+                    lista.AgregarDespues(nodoSeleccionado, datosAlumno);
+                    LimpiarLista();
+                    GenerarLista(lista.nodoInicial);
+                    LimpiarInputs();
+                    this.nodoSeleccionado = null;
+                }
+            }
+        }
+
+        private void btnAgregarAntes_Click(object sender, EventArgs e)
+        {
+            if (nodoSeleccionado == null)
+            {
+                MessageBox.Show("Debe seleccionar un alumno para agregar despues", "Error");
+            }
+            else
+            {
+                if (ValidarDatos())
+                {
+                    CargarDatosAlumno();
+                    lista.AgregarAntes(nodoSeleccionado, datosAlumno);
+                    LimpiarLista();
+                    GenerarLista(lista.nodoInicial);
+                    LimpiarInputs();
+                    this.nodoSeleccionado = null;
+                }
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+            if (!this.isListVisible)
+            {
+                this.listaAlumnos.Show();
+                this.isListVisible = true;
+                this.btnListarAlumnos.Text = "Esconder Lista";
+            } else
+            {
+                this.listaAlumnos.Hide();
+                this.isListVisible = false;
+                this.btnListarAlumnos.Text = "Listar Alumnos";
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.listaAlumnos.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

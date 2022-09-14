@@ -113,5 +113,46 @@ namespace TP4_ListasEjercicio2
             if (nodoInicial != null)
                 nodoInicial = nodoInicial.siguiente;
         }
+
+        internal void AgregarDespues(Nodo nodoSeleccionado, Dictionary<string, string> datosAlumno)
+        {
+            Nodo nuevoAlumno = new Nodo();
+            nuevoAlumno.nombre = datosAlumno["nombre"];
+            nuevoAlumno.apellido = datosAlumno["apellido"];
+            nuevoAlumno.dni = Convert.ToInt32(datosAlumno["dni"]);
+            nuevoAlumno.direccion = datosAlumno["direccion"];
+            nuevoAlumno.telefono = datosAlumno["tel"];
+            nuevoAlumno.fechaNacimiento = datosAlumno["fechaNacimiento"];
+
+            Nodo aux = nodoSeleccionado.siguiente;
+            nodoSeleccionado.siguiente = nuevoAlumno;
+            nuevoAlumno.siguiente = aux;
+        }
+
+        internal void AgregarAntes(Nodo nodoSeleccionado, Dictionary<string, string> datosAlumno)
+        {
+            Nodo nuevoAlumno = new Nodo();
+            nuevoAlumno.nombre = datosAlumno["nombre"];
+            nuevoAlumno.apellido = datosAlumno["apellido"];
+            nuevoAlumno.dni = Convert.ToInt32(datosAlumno["dni"]);
+            nuevoAlumno.direccion = datosAlumno["direccion"];
+            nuevoAlumno.telefono = datosAlumno["tel"];
+            nuevoAlumno.fechaNacimiento = datosAlumno["fechaNacimiento"];
+
+            Nodo alumnoAnterior = BuscarAnterior(nodoInicial, nodoSeleccionado);
+
+            if (alumnoAnterior == null)
+            {
+                nodoInicial = nuevoAlumno;
+                nodoInicial.siguiente = nodoSeleccionado;
+            }
+            else
+            {
+                alumnoAnterior.siguiente = nuevoAlumno;
+                nuevoAlumno.siguiente = nodoSeleccionado;
+            }
+
+        }
+
     }
 }

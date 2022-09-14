@@ -46,6 +46,10 @@ namespace TP4_ListasEjercicio2
             this.listaAlumnos = new System.Windows.Forms.ListBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregarDespues = new System.Windows.Forms.Button();
+            this.btnAgregarAntes = new System.Windows.Forms.Button();
+            this.btnListarAlumnos = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -175,7 +179,7 @@ namespace TP4_ListasEjercicio2
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(466, 82);
+            this.btnEliminar.Location = new System.Drawing.Point(573, 82);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(91, 42);
             this.btnEliminar.TabIndex = 15;
@@ -185,7 +189,7 @@ namespace TP4_ListasEjercicio2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(369, 134);
+            this.button1.Location = new System.Drawing.Point(471, 82);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 42);
             this.button1.TabIndex = 16;
@@ -193,11 +197,59 @@ namespace TP4_ListasEjercicio2
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnAgregarDespues
+            // 
+            this.btnAgregarDespues.Location = new System.Drawing.Point(369, 140);
+            this.btnAgregarDespues.Name = "btnAgregarDespues";
+            this.btnAgregarDespues.Size = new System.Drawing.Size(91, 42);
+            this.btnAgregarDespues.TabIndex = 17;
+            this.btnAgregarDespues.Text = "Agregar\r\nDespues";
+            this.btnAgregarDespues.UseVisualStyleBackColor = true;
+            this.btnAgregarDespues.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnAgregarAntes
+            // 
+            this.btnAgregarAntes.Location = new System.Drawing.Point(369, 198);
+            this.btnAgregarAntes.Name = "btnAgregarAntes";
+            this.btnAgregarAntes.Size = new System.Drawing.Size(91, 42);
+            this.btnAgregarAntes.TabIndex = 18;
+            this.btnAgregarAntes.Text = "Agregar\r\nAntes";
+            this.btnAgregarAntes.UseVisualStyleBackColor = true;
+            this.btnAgregarAntes.Click += new System.EventHandler(this.btnAgregarAntes_Click);
+            // 
+            // btnListarAlumnos
+            // 
+            this.btnListarAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarAlumnos.Location = new System.Drawing.Point(476, 140);
+            this.btnListarAlumnos.Name = "btnListarAlumnos";
+            this.btnListarAlumnos.Size = new System.Drawing.Size(188, 100);
+            this.btnListarAlumnos.TabIndex = 19;
+            this.btnListarAlumnos.Text = "Listar Alumnos";
+            this.btnListarAlumnos.UseVisualStyleBackColor = true;
+            this.btnListarAlumnos.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalir.Location = new System.Drawing.Point(671, 15);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(117, 30);
+            this.btnSalir.TabIndex = 20;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnListarAlumnos);
+            this.Controls.Add(this.btnAgregarAntes);
+            this.Controls.Add(this.btnAgregarDespues);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.listaAlumnos);
@@ -217,6 +269,7 @@ namespace TP4_ListasEjercicio2
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +294,10 @@ namespace TP4_ListasEjercicio2
         private System.Windows.Forms.ListBox listaAlumnos;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarDespues;
+        private System.Windows.Forms.Button btnAgregarAntes;
+        private System.Windows.Forms.Button btnListarAlumnos;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 
