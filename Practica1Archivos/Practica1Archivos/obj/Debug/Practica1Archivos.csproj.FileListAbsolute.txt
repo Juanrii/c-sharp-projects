@@ -1,0 +1,11 @@
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\bin\Debug\Practica1Archivos.exe.config
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\bin\Debug\Practica1Archivos.exe
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\bin\Debug\Practica1Archivos.pdb
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\obj\Debug\Practica1Archivos.csproj.AssemblyReference.cache
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\obj\Debug\Practica1Archivos.Form1.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\obj\Debug\Practica1Archivos.Properties.Resources.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\obj\Debug\Practica1Archivos.csproj.GenerateResource.cache
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\obj\Debug\Practica1Archivos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\obj\Debug\Practica1Archivos.exe
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\obj\Debug\Practica1Archivos.pdb
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\Clase 10 - Archivos\Practica1Archivos\Practica1Archivos\obj\Debug\Practica1Archivos.ActualizarForm.resources
