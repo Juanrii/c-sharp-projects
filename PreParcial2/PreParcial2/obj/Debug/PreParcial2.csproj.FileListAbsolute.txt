@@ -1,0 +1,12 @@
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\bin\Debug\PreParcial2.exe.config
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\bin\Debug\PreParcial2.exe
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\bin\Debug\PreParcial2.pdb
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.csproj.AssemblyReference.cache
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.Form1.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.Properties.Resources.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.csproj.GenerateResource.cache
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.exe
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.pdb
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.FormularioAlumnos.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\PreParcial2\PreParcial2\PreParcial2\obj\Debug\PreParcial2.FormularioNotas.resources
