@@ -20,7 +20,7 @@ namespace PreParcial2
             LlenarDataGridView();
         }
 
-        private void LlenarDataGridView()
+        public void LlenarDataGridView()
         {
             dgvAlumnos.DataSource = null;
             dgvAlumnos.DataSource = gestorAlumnos.Listar();
@@ -28,8 +28,19 @@ namespace PreParcial2
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ActualizarAlumno actualizarAlumno = new ActualizarAlumno();
-            actualizarAlumno.Show();
+            if (dgvAlumnos.SelectedRows.Count == 1)
+            {
+                Alumno alumnoSelect = (Alumno)dgvAlumnos.SelectedRows[0].DataBoundItem;
+                ActualizarAlumno actualizarAlumno = new ActualizarAlumno(alumnoSelect, gestorAlumnos);
+                actualizarAlumno.Show();
+                // cuando se cierra el formulario actualizar, se ejecuta este evento
+                actualizarAlumno.FormClosed += HandleEventActualiarFormClosed; 
+            }
+        }
+
+        private void HandleEventActualiarFormClosed(object sender, FormClosedEventArgs e)
+        {
+            LlenarDataGridView();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)

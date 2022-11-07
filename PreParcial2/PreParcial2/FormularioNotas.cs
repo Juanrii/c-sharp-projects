@@ -28,7 +28,7 @@ namespace PreParcial2
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ActualizarNota actualizarNota = new ActualizarNota();
-            actualizarNota.Show();
+            actualizarNota.Show(); 
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
