@@ -10,7 +10,7 @@ namespace PreParcial2
     public class GestorAlumnos
     {
         private string archivo = "Alumnos.txt";
-        private List<Alumno> listaAlumnoTotales;
+        public List<Alumno> listaAlumnoTotales;
 
         internal List<Alumno> Listar()
         {

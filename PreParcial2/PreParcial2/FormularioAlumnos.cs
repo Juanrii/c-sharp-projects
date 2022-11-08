@@ -12,11 +12,12 @@ namespace PreParcial2
 {
     public partial class FormularioAlumnos : Form
     {
-        GestorAlumnos gestorAlumnos = new GestorAlumnos();
+        GestorAlumnos gestorAlumnos = null;
 
-        public FormularioAlumnos()
+        public FormularioAlumnos(GestorAlumnos gestorAlumnos)
         {
             InitializeComponent();
+            this.gestorAlumnos = gestorAlumnos;
             LlenarDataGridView();
         }
 
@@ -51,7 +52,14 @@ namespace PreParcial2
                 string nombre = inputNombre.Text;
                 string apellido = inputApellido.Text;
 
-                if (LegajoInexistente(legajo))
+                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido))
+                {
+                    MessageBox.Show("Datos Incorrectos.", "Error");
+                    return;
+                }
+
+                
+                if (LegajoNoExiste(legajo))
                 {
                     Alumno nuevoAlumno = new Alumno(legajo)
                     {
@@ -70,7 +78,7 @@ namespace PreParcial2
             }
         }
 
-        private bool LegajoInexistente(int legajo)
+        private bool LegajoNoExiste(int legajo)
         {
             bool existe = gestorAlumnos.BuscarLegajo(legajo);
             if (existe)
@@ -90,5 +98,6 @@ namespace PreParcial2
                 LlenarDataGridView();
             }
         }
+
     }
 }

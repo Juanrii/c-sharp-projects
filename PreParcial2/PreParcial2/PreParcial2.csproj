@@ -77,13 +77,24 @@
     <Compile Include="FormularioNotas.Designer.cs">
       <DependentUpon>FormularioNotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioPromedios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPromedios.Designer.cs">
+      <DependentUpon>FormularioPromedios.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorAlumnos.cs" />
     <Compile Include="GestorNotas.cs" />
+    <Compile Include="GestorPromedios.cs" />
     <Compile Include="Nota.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Promedio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ActualizarAlumno.resx">
       <DependentUpon>ActualizarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarNota.resx">
+      <DependentUpon>ActualizarNota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -93,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioNotas.resx">
       <DependentUpon>FormularioNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPromedios.resx">
+      <DependentUpon>FormularioPromedios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

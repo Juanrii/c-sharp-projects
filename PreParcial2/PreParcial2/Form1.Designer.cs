@@ -65,6 +65,7 @@ namespace PreParcial2
             this.btnPromedios.TabIndex = 2;
             this.btnPromedios.Text = "Obtener Promedios";
             this.btnPromedios.UseVisualStyleBackColor = true;
+            this.btnPromedios.Click += new System.EventHandler(this.btnPromedios_Click);
             // 
             // Form1
             // 

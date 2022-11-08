@@ -42,6 +42,39 @@ namespace PreParcial2
             fs.Close();
         }
 
+        internal void Actualizar(Nota notaActualizada)
+        {
+            string output = string.Empty;
+
+            FileStream fs = new FileStream(archivo, FileMode.OpenOrCreate, FileAccess.Read);
+            using (StreamReader reader = new StreamReader(fs))
+            {
+                string linea = reader.ReadLine();
+
+                while (linea != null)
+                {
+                    Nota nota = new Nota(linea);
+                    if (nota.Legajo == notaActualizada.Legajo)
+                    {
+                        output += notaActualizada.GenerarRegistro() + Environment.NewLine;
+                    }
+                    else
+                    {
+                        output += linea + Environment.NewLine;
+                    }
+                    linea = reader.ReadLine();
+                }
+            }
+            fs.Close();
+
+            fs = new FileStream(archivo, FileMode.Truncate, FileAccess.Write);
+            using (StreamWriter writer = new StreamWriter(fs))
+            {
+                writer.Write(output);
+            }
+            fs.Close();
+        }
+
         internal void Baja(int legajo)
         {
             string output = string.Empty;

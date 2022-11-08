@@ -12,10 +12,11 @@ namespace PreParcial2
 {
     public partial class FormularioNotas : Form
     {
-        GestorNotas gestorNotas = new GestorNotas();
-        public FormularioNotas()
+        GestorNotas gestorNotas = null;
+        public FormularioNotas(GestorNotas gestorNotas)
         {
             InitializeComponent();
+            this.gestorNotas = gestorNotas;
             LimpiarDataGridView();
         }
 
@@ -27,18 +28,36 @@ namespace PreParcial2
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ActualizarNota actualizarNota = new ActualizarNota();
-            actualizarNota.Show(); 
+            if (dgvNotas.SelectedRows.Count == 1)
+            {
+                Nota notaSelect = (Nota)dgvNotas.SelectedRows[0].DataBoundItem;
+                ActualizarNota actualizarNota = new ActualizarNota(notaSelect, gestorNotas);
+                actualizarNota.Show();
+                // cuando se cierra el formulario actualizar, se ejecuta este evento
+                actualizarNota.FormClosed += HandleEventActualiarFormClosed;
+            }
+        }
+
+        private void HandleEventActualiarFormClosed(object sender, FormClosedEventArgs e)
+        {
+            LimpiarDataGridView();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
             try
             {
-                string fecha = inputFecha.Value.ToString("yyyy-mm-dd");
+                string fecha = inputFecha.Value.ToString("yyyy-MM-dd");
                 string materia = inputMateria.Text;
                 int legajo = Convert.ToInt32(inputLegajo.Value);
                 int nota = Convert.ToInt32(inputNota.Text);
+
+                if (string.IsNullOrEmpty(fecha) || string.IsNullOrEmpty(materia) || nota < 0 || nota > 10)
+                {
+                    MessageBox.Show("Datos Incorrectos.", "Error");
+                    return;
+                }
+
 
                 Nota nuevaNota = new Nota(legajo)
                 {

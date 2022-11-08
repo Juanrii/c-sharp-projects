@@ -166,6 +166,7 @@ namespace PreParcial2
             this.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNotas.Location = new System.Drawing.Point(12, 12);
             this.dgvNotas.Name = "dgvNotas";
+            this.dgvNotas.ReadOnly = true;
             this.dgvNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotas.Size = new System.Drawing.Size(411, 286);
             this.dgvNotas.TabIndex = 2;
