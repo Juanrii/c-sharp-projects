@@ -1,0 +1,13 @@
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\bin\Debug\SegundoParcialModelo.exe.config
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\bin\Debug\SegundoParcialModelo.exe
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\bin\Debug\SegundoParcialModelo.pdb
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.Properties.Resources.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.csproj.GenerateResource.cache
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.exe
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.pdb
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.FormularioInicial.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.FormularioAlumnos.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.FormularioPromedios.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.ForumularioNotas.resources
+C:\Users\Usuario\Juan\UAI\1 año\Programacion 1\Proyectos\SegundoParcialModelo\SegundoParcialModelo\SegundoParcialModelo\obj\Debug\SegundoParcialModelo.csproj.AssemblyReference.cache
