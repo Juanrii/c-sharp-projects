@@ -221,26 +221,57 @@ namespace Integrador_Numero1_PRACTICA
         {
             if (_personaSeleccionada != null)
             {
-                _personaList.Remove(_personaSeleccionada);
-                foreach (Auto a in _autoList)
+                DialogResult dialogResult = MessageBox.Show($"¿Desea eliminar la persona con DNI: {_personaSeleccionada.DNI}?", 
+                    "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
                 {
-                    if (a.Duenio() == _personaSeleccionada)
-                        a.SetearDuenio = null;
-                }
+                    _personaList.Remove(_personaSeleccionada);
+                    foreach (Auto a in _autoList)
+                    {
+                        if (a.Duenio() == _personaSeleccionada)
+                            a.SetearDuenio = null;
+                    }
 
-                List<AutoPersonaVista> itemsABorrar = _autoPersonaList.FindAll(apv => apv.DNI == _personaSeleccionada.DNI);
-                foreach (AutoPersonaVista apv in itemsABorrar)
+                    List<AutoPersonaVista> itemsABorrar = _autoPersonaList.FindAll(apv => apv.DNI == _personaSeleccionada.DNI);
+                    foreach (AutoPersonaVista apv in itemsABorrar)
+                    {
+                        if (apv is AutoPersonaVista)
+                            _autoPersonaList.Remove(apv);
+                    }
+
+                    _personaSeleccionada = null;
+
+                    ActualizarDgvPersonas();
+                    ActualizarDgvAutos();
+                    ActualizarDgvAutosDePersona();
+                    ActualizarDgvAutosConDuenio();
+                }
+            }
+        }
+
+        private void btnBorrarAuto_Click(object sender, EventArgs e)
+        {
+            if (_autoSeleccionado != null)
+            {
+                DialogResult dialogResult = MessageBox.Show($"¿Desea eliminar el auto con Patente: {_autoSeleccionado.Patente}?",
+                   "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
                 {
-                    if (apv is AutoPersonaVista)
-                        _autoPersonaList.Remove(apv);
+                    Persona duenio = _autoSeleccionado.Duenio();
+                    _autoList.Remove(_autoSeleccionado);
+                    duenio.QuitarAuto(_autoSeleccionado);
+                    AutoPersonaVista ap = _autoPersonaList.Find(apv => apv.Patente == _autoSeleccionado.Patente);
+                    _autoPersonaList.Remove(ap);
+
+                    _autoSeleccionado = null;
+
+                    ActualizarDgvPersonas();
+                    ActualizarDgvAutos();
+                    ActualizarDgvAutosDePersona();
+                    ActualizarDgvAutosConDuenio();
                 }
-
-                _personaSeleccionada = null;
-
-                ActualizarDgvPersonas();
-                ActualizarDgvAutos();
-                ActualizarDgvAutosDePersona();
-                ActualizarDgvAutosConDuenio();
             }
         }
     }

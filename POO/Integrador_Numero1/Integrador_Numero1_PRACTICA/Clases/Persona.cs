@@ -44,5 +44,14 @@ namespace Integrador_Numero1_PRACTICA.Clases
         {
             _listaAutos.Add(a);
         }
+
+        public void QuitarAuto(Auto autoSeleccionado)
+        {
+            Auto auto = _listaAutos.Find(a => a.Patente == autoSeleccionado.Patente);
+            if (auto is Auto)
+            {
+                _listaAutos.Remove(auto);
+            }
+        }
     }
 }

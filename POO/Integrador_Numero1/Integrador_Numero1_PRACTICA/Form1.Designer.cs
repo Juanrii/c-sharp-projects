@@ -44,6 +44,7 @@
             this.labelTotal1 = new System.Windows.Forms.Label();
             this.labelTotal2 = new System.Windows.Forms.Label();
             this.btnBorrarPersona = new System.Windows.Forms.Button();
+            this.btnBorrarAuto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDueniosAutos)).BeginInit();
@@ -99,35 +100,41 @@
             // 
             // btnAgregarPersona
             // 
+            this.btnAgregarPersona.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAgregarPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPersona.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregarPersona.Location = new System.Drawing.Point(7, 260);
             this.btnAgregarPersona.Name = "btnAgregarPersona";
             this.btnAgregarPersona.Size = new System.Drawing.Size(193, 40);
             this.btnAgregarPersona.TabIndex = 4;
             this.btnAgregarPersona.Text = "Agregar Persona";
-            this.btnAgregarPersona.UseVisualStyleBackColor = true;
+            this.btnAgregarPersona.UseVisualStyleBackColor = false;
             this.btnAgregarPersona.Click += new System.EventHandler(this.btnAgregarPersona_Click);
             // 
             // btnAgregarAuto
             // 
+            this.btnAgregarAuto.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAgregarAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarAuto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregarAuto.Location = new System.Drawing.Point(402, 260);
             this.btnAgregarAuto.Name = "btnAgregarAuto";
-            this.btnAgregarAuto.Size = new System.Drawing.Size(312, 40);
+            this.btnAgregarAuto.Size = new System.Drawing.Size(208, 40);
             this.btnAgregarAuto.TabIndex = 5;
             this.btnAgregarAuto.Text = "Agregar Auto";
-            this.btnAgregarAuto.UseVisualStyleBackColor = true;
+            this.btnAgregarAuto.UseVisualStyleBackColor = false;
             this.btnAgregarAuto.Click += new System.EventHandler(this.btnAgregarAuto_Click);
             // 
             // btnAsignarDuenio
             // 
+            this.btnAsignarDuenio.BackColor = System.Drawing.Color.Orange;
             this.btnAsignarDuenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsignarDuenio.Location = new System.Drawing.Point(715, 260);
+            this.btnAsignarDuenio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAsignarDuenio.Location = new System.Drawing.Point(610, 260);
             this.btnAsignarDuenio.Name = "btnAsignarDuenio";
-            this.btnAsignarDuenio.Size = new System.Drawing.Size(312, 40);
+            this.btnAsignarDuenio.Size = new System.Drawing.Size(208, 40);
             this.btnAsignarDuenio.TabIndex = 6;
             this.btnAsignarDuenio.Text = "Asignar Dueño";
-            this.btnAsignarDuenio.UseVisualStyleBackColor = true;
+            this.btnAsignarDuenio.UseVisualStyleBackColor = false;
             this.btnAsignarDuenio.Click += new System.EventHandler(this.btnAsignarDuenio_Click);
             // 
             // dgvDueniosAutos
@@ -216,20 +223,36 @@
             // 
             // btnBorrarPersona
             // 
+            this.btnBorrarPersona.BackColor = System.Drawing.Color.Red;
             this.btnBorrarPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarPersona.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBorrarPersona.Location = new System.Drawing.Point(203, 260);
             this.btnBorrarPersona.Name = "btnBorrarPersona";
             this.btnBorrarPersona.Size = new System.Drawing.Size(193, 40);
             this.btnBorrarPersona.TabIndex = 15;
             this.btnBorrarPersona.Text = "Borrar Persona";
-            this.btnBorrarPersona.UseVisualStyleBackColor = true;
+            this.btnBorrarPersona.UseVisualStyleBackColor = false;
             this.btnBorrarPersona.Click += new System.EventHandler(this.btnBorrarPersona_Click);
+            // 
+            // btnBorrarAuto
+            // 
+            this.btnBorrarAuto.BackColor = System.Drawing.Color.Red;
+            this.btnBorrarAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarAuto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBorrarAuto.Location = new System.Drawing.Point(818, 260);
+            this.btnBorrarAuto.Name = "btnBorrarAuto";
+            this.btnBorrarAuto.Size = new System.Drawing.Size(208, 40);
+            this.btnBorrarAuto.TabIndex = 16;
+            this.btnBorrarAuto.Text = "Borrar Auto";
+            this.btnBorrarAuto.UseVisualStyleBackColor = false;
+            this.btnBorrarAuto.Click += new System.EventHandler(this.btnBorrarAuto_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 638);
+            this.Controls.Add(this.btnBorrarAuto);
             this.Controls.Add(this.btnBorrarPersona);
             this.Controls.Add(this.labelTotal2);
             this.Controls.Add(this.labelTotal1);
@@ -276,6 +299,7 @@
         private System.Windows.Forms.Label labelTotal1;
         private System.Windows.Forms.Label labelTotal2;
         private System.Windows.Forms.Button btnBorrarPersona;
+        private System.Windows.Forms.Button btnBorrarAuto;
     }
 }
 
