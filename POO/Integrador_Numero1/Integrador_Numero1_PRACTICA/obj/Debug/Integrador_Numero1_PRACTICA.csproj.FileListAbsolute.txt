@@ -1,0 +1,11 @@
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\bin\Debug\Integrador_Numero1_PRACTICA.exe.config
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\bin\Debug\Integrador_Numero1_PRACTICA.exe
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\bin\Debug\Integrador_Numero1_PRACTICA.pdb
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\obj\Debug\Integrador_Numero1_PRACTICA.csproj.AssemblyReference.cache
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\obj\Debug\Integrador_Numero1_PRACTICA.csproj.SuggestedBindingRedirects.cache
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\obj\Debug\Integrador_Numero1_PRACTICA.Form1.resources
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\obj\Debug\Integrador_Numero1_PRACTICA.Properties.Resources.resources
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\obj\Debug\Integrador_Numero1_PRACTICA.csproj.GenerateResource.cache
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\obj\Debug\Integrador_Numero1_PRACTICA.csproj.CoreCompileInputs.cache
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\obj\Debug\Integrador_Numero1_PRACTICA.exe
+B:\Juan\UAI\2 año\POO\Unidad 1\Integrador_Numero1_PRACTICA\Integrador_Numero1_PRACTICA\obj\Debug\Integrador_Numero1_PRACTICA.pdb
