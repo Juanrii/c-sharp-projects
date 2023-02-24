@@ -1,4 +1,5 @@
 ﻿using Integrador_Numero1_PRACTICA.Clases;
+using Integrador_Numero1_PRACTICA.Gestores;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,11 @@ namespace Integrador_Numero1_PRACTICA
 {
     public partial class Form1 : Form
     {
-        private List<Persona> _personaList = new List<Persona>();
+        private GestorPersonas _gestorPersonas = new GestorPersonas();
 
-        private List<Auto> _autoList = new List<Auto>();
+        private GestorAutos _gestorAutos = new GestorAutos();
 
-        private List<AutoPersonaVista> _autoPersonaList = new List<AutoPersonaVista>();
+        private GestorAutoPersonaVista _gestorAutosPersonas = new GestorAutoPersonaVista();
 
         private Persona _personaSeleccionada = null;
 
@@ -50,7 +51,7 @@ namespace Integrador_Numero1_PRACTICA
             try
             {
                 string dni = Interaction.InputBox("Ingrese el DNI: ");
-                if (DniExistente(dni))
+                if (_gestorPersonas.DniExistente(dni))
                 {
                     MessageBox.Show($"El DNI ingresado: {dni} ya existe. Por favor ingrese otro.", "DNI Existente");
                     return;
@@ -65,15 +66,7 @@ namespace Integrador_Numero1_PRACTICA
                     return;
                 }
 
-                // Esto se podria delegar a una clase Gestor
-                Persona nuevaPersona = new Persona()
-                {
-                    DNI = dni,
-                    Nombre = nombre,
-                    Apellido = apellido
-                };
-
-                _personaList.Add(nuevaPersona);
+                _gestorPersonas.CrearPersona(dni, nombre, apellido);
 
                 ActualizarDgvPersonas();
             }
@@ -87,19 +80,14 @@ namespace Integrador_Numero1_PRACTICA
         {
             return (String.IsNullOrEmpty(dni) || String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(apellido));
         }
-
-        private bool DniExistente(string dni)
-        {
-            return _personaList.Find(p => p.DNI == dni) is Persona; 
-        }
-
+        
         private void ActualizarDgvPersonas()
         {
             dgvPersonas.DataSource = null;
-            dgvPersonas.DataSource = _personaList;
+            dgvPersonas.DataSource = _gestorPersonas.ObtenerPersonas();
 
             labelTotal1.Text = "Totales: ";
-            labelTotal1.Text += _personaList.Count();
+            labelTotal1.Text += _gestorPersonas.CantidadPersonas();
         }
 
         private void btnAgregarAuto_Click(object sender, EventArgs e)
@@ -107,7 +95,7 @@ namespace Integrador_Numero1_PRACTICA
             try
             {
                 string patente  = Interaction.InputBox("Ingrese la Patente: ");
-                if (PatenteExistente(patente))
+                if (_gestorAutos.PatenteExistente(patente))
                 {
                     MessageBox.Show($"La Patente ingresada: {patente} ya existe. Por favor ingrese otra.", "Patente Existente");
                     return;
@@ -124,9 +112,7 @@ namespace Integrador_Numero1_PRACTICA
                     return;
                 }
 
-                Auto nuevoAuto = new Auto(patente, marca, modelo, anio, precio);
-
-                _autoList.Add(nuevoAuto);
+                _gestorAutos.CrearAuto(patente, marca, modelo, anio, precio);
 
                 ActualizarDgvAutos();
             }
@@ -139,10 +125,10 @@ namespace Integrador_Numero1_PRACTICA
         private void ActualizarDgvAutos()
         {
             dgvAutos.DataSource = null;
-            dgvAutos.DataSource = _autoList;
+            dgvAutos.DataSource = _gestorAutos.ObtenerAutos();
 
             labelTotal2.Text = "Totales: ";
-            labelTotal2.Text += _autoList.Count();
+            labelTotal2.Text += _gestorAutos.CantidadAutos();
         }
 
         private bool DatosAutosVacios(string marca, string modelo, string anio, decimal precio)
@@ -150,33 +136,15 @@ namespace Integrador_Numero1_PRACTICA
             return (String.IsNullOrEmpty(marca) || String.IsNullOrEmpty(modelo) || String.IsNullOrEmpty(anio) || String.IsNullOrEmpty(precio.ToString()));
         }
 
-        private bool PatenteExistente(string patente)
-        {
-            return _autoList.Find(a => a.Patente == patente) is Auto;
-        }
-
         private void btnAsignarDuenio_Click(object sender, EventArgs e)
         {
             if (_personaSeleccionada != null && _autoSeleccionado != null)
             {
-                foreach (Auto a in _autoList)
-                {
-                    if (a.Patente == _autoSeleccionado.Patente && a.Duenio() == null)
-                    {
-                        a.SetearDuenio = _personaSeleccionada;
-                        _personaSeleccionada.AgregarAuto(a);
-                        AutoPersonaVista apv = new AutoPersonaVista()
-                        {
-                            Marca = a.Marca,
-                            Anio = a.Anio,
-                            Modelo = a.Modelo,
-                            Patente = a.Patente,
-                            DNI = a.Duenio().DNI,
-                            Duenio = a.Duenio().Apellido + ", " + a.Duenio().Nombre 
-                        };
-                        _autoPersonaList.Add(apv);
-                    }
-                }
+                _gestorAutos.AsignarDuenio(_personaSeleccionada, _autoSeleccionado);
+
+                _gestorAutosPersonas.AgregarAutoPersona(_autoSeleccionado);
+
+
                 ActualizarDgvAutosDePersona();
                 ActualizarDgvAutosConDuenio();
             }
@@ -185,10 +153,10 @@ namespace Integrador_Numero1_PRACTICA
         private void ActualizarDgvAutosConDuenio()
         {
             dgvDueniosAutos.DataSource = null;
-            dgvDueniosAutos.DataSource = _autoPersonaList;
+            dgvDueniosAutos.DataSource = _gestorAutosPersonas.ObtenerAutosDuenios();
 
             labelTotal4.Text = "Totales: ";
-            labelTotal4.Text += _autoPersonaList.Count();
+            labelTotal4.Text += _gestorAutosPersonas.CantidadAutosDuenios();
         }
 
         private void ActualizarDgvAutosDePersona()
@@ -226,19 +194,11 @@ namespace Integrador_Numero1_PRACTICA
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    _personaList.Remove(_personaSeleccionada);
-                    foreach (Auto a in _autoList)
-                    {
-                        if (a.Duenio() == _personaSeleccionada)
-                            a.SetearDuenio = null;
-                    }
+                    _gestorPersonas.EliminarPersona(_personaSeleccionada);
 
-                    List<AutoPersonaVista> itemsABorrar = _autoPersonaList.FindAll(apv => apv.DNI == _personaSeleccionada.DNI);
-                    foreach (AutoPersonaVista apv in itemsABorrar)
-                    {
-                        if (apv is AutoPersonaVista)
-                            _autoPersonaList.Remove(apv);
-                    }
+                    _gestorAutos.EliminarDuenio(_personaSeleccionada);
+
+                    _gestorAutosPersonas.BorrarDuenio(_personaSeleccionada);
 
                     _personaSeleccionada = null;
 
@@ -260,10 +220,12 @@ namespace Integrador_Numero1_PRACTICA
                 if (dialogResult == DialogResult.Yes)
                 {
                     Persona duenio = _autoSeleccionado.Duenio();
-                    _autoList.Remove(_autoSeleccionado);
+
+                    _gestorAutos.EliminarAuto(_autoSeleccionado);
+
                     duenio.QuitarAuto(_autoSeleccionado);
-                    AutoPersonaVista ap = _autoPersonaList.Find(apv => apv.Patente == _autoSeleccionado.Patente);
-                    _autoPersonaList.Remove(ap);
+
+                    _gestorAutosPersonas.BorrarAuto(_autoSeleccionado);
 
                     _autoSeleccionado = null;
 
