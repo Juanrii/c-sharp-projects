@@ -144,7 +144,6 @@ namespace Integrador_Numero1_PRACTICA
 
                 _gestorAutosPersonas.AgregarAutoPersona(_autoSeleccionado);
 
-
                 ActualizarDgvAutosDePersona();
                 ActualizarDgvAutosConDuenio();
             }
