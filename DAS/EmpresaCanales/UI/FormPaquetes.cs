@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
 using BLL;
+using static BE.BECanal;
 
 namespace UI
 {
@@ -22,15 +25,17 @@ namespace UI
         {
             InitializeComponent();
             ActualizarDGV();
+            inputGenero.DataSource = Enum.GetNames(typeof(BECanal.TipoGenero));
+
             dropDownClientes.Items.Clear();
             dropDownClientes.DisplayMember = "Nombre";
             dropDownClientes.ValueMember = "Codigo";
-            foreach (BECliente c in Form1.clientes)
+            foreach (BECliente c in FormInicial.clientes)
             {
                 dropDownClientes.Items.Add(c);
             }
 
-            foreach (BEPaquete paquete in Form1.paquetes)
+            foreach (BEPaquete paquete in FormInicial.paquetes)
             {
                 if (paquete is BEPremium) 
                 { 
@@ -58,10 +63,10 @@ namespace UI
                     Duracion = Convert.ToInt32(inputDuracion.Text),
                     Episodio = Convert.ToInt32(inputEpisodio.Text),
                     Ranking = Convert.ToInt32(inputRanking.Text),
-                    Genero = inputGenero.Text,
+                    Genero = (TipoGenero)Enum.Parse(typeof(TipoGenero), inputGenero.Text),
                     Director = inputDirector.Text,
                 };
-                Form1.canales.Add(canal);
+                FormInicial.canales.Add(canal);
                 ActualizarDGV();
             }
             catch (Exception)
@@ -74,10 +79,10 @@ namespace UI
         private void ActualizarDGV()
         {
             dgvCanales.DataSource = null;
-            dgvCanales.DataSource = Form1.canales;
+            dgvCanales.DataSource = FormInicial.canales;
 
             dgvPaquetes.DataSource = null;
-            dgvPaquetes.DataSource = Form1.paquetes;
+            dgvPaquetes.DataSource = FormInicial.paquetes;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,34 +98,29 @@ namespace UI
 
 
                 labelRecaudado.Text = "Total Recaudado: " + _totalRecaudado.ToString();
-                BEPaquete paquete;
+                BEPaquete paquete = null;
+                BLPaquete BLPaquete = null;
+
                 if (btnPremium.Checked)
                 {
-
                     paquete = new BEPremium();
-                    paquete.Cliente = (BECliente)dropDownClientes.SelectedItem;
-                    Form1.paquetes.Add(paquete);
-                    dgvPaquetes.DataSource = null;
-                    dgvPaquetes.DataSource = Form1.paquetes;
-
-                    BLPremium bLPremium = new BLPremium();
-                    _totalRecaudado += bLPremium.ObtenerAbono(paquete);
-
+                    BLPaquete = new BLPremium();
 
                 } else if (btnSilver.Checked) { 
                     paquete = new BESilver();
-                    paquete.Cliente = (BECliente)dropDownClientes.SelectedItem;
-                    Form1.paquetes.Add(paquete);
-                    dgvPaquetes.DataSource = null;
-                    dgvPaquetes.DataSource = Form1.paquetes;
-
-                    BLSilver blSilver = new BLSilver();
-                    _totalRecaudado += blSilver.ObtenerAbono(paquete);
+                    BLPaquete = new BLSilver();
                 }
+
+                paquete.Cliente = (BECliente)dropDownClientes.SelectedItem;
+                paquete.Abono = BLPaquete.ObtenerAbono(paquete);
+                FormInicial.paquetes.Add(paquete);
+                dgvPaquetes.DataSource = null;
+                dgvPaquetes.DataSource = FormInicial.paquetes;
+                _totalRecaudado += paquete.Abono;
 
                 dropDownClientes.Items.Remove((BECliente)dropDownClientes.SelectedItem);
 
-                labelRecaudado.Text = "Total Recaudado: " + _totalRecaudado.ToString();
+                labelRecaudado.Text = "Total Recaudado: $" + _totalRecaudado.ToString();
 
             }
             catch (Exception)
@@ -135,6 +135,14 @@ namespace UI
             if (dgvCanales.SelectedRows.Count == 1)
             {
                 _canalSeleccionado = (BECanal)dgvCanales.SelectedRows[0].DataBoundItem;
+
+                inputSerie.Text = _canalSeleccionado.Serie;
+                inputTemporada.Text = _canalSeleccionado.Temporadas.ToString();
+                inputDuracion.Text = _canalSeleccionado.Duracion.ToString();
+                inputEpisodio.Text = _canalSeleccionado.Episodio.ToString();
+                inputRanking.Text = _canalSeleccionado.Ranking.ToString();
+                inputGenero.Text = _canalSeleccionado.Genero.ToString();
+                inputDirector.Text = _canalSeleccionado.Director;
             } else
             {
                 _canalSeleccionado = null;
@@ -171,7 +179,7 @@ namespace UI
 
                 if (!canalAgregado)
                 {
-                    foreach (BEPaquete paquete in Form1.paquetes)
+                    foreach (BEPaquete paquete in FormInicial.paquetes)
                     {
                         if (paquete.Codigo == _paqueteSeleccionado.Codigo)
                             paquete.Canales.Add(_canalSeleccionado);
@@ -186,6 +194,66 @@ namespace UI
             {
                 MessageBox.Show("Debe seleccionar el paquete y la serie deseada.");
                 return;
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_canalSeleccionado == null)
+                {
+                    MessageBox.Show("Debe seleccionar un canal para actualizar.");
+                    return;
+                }
+
+                // actualizar lista canales
+                foreach (BECanal canal in FormInicial.canales)
+                {
+                    if (canal.Codigo == _canalSeleccionado.Codigo)
+                    {
+                        canal.Serie = inputSerie.Text;
+                        canal.Temporadas = Convert.ToInt32(inputTemporada.Text);
+                        canal.Duracion = Convert.ToInt32(inputDuracion.Text);
+                        canal.Episodio = Convert.ToInt32(inputEpisodio.Text);
+                        canal.Ranking = Convert.ToInt32(inputRanking.Text);
+                        canal.Genero = (TipoGenero)Enum.Parse(typeof(TipoGenero), inputGenero.Text);
+                        canal.Director = inputDirector.Text;
+                    }
+                }
+
+                // acutalizar canal en lista de paquetes
+                foreach (BEPaquete paquete in FormInicial.paquetes)
+                {
+                    foreach (BECanal canal in paquete.Canales)
+                    {
+                        if (canal.Codigo == _canalSeleccionado.Codigo)
+                        {
+                            canal.Serie = inputSerie.Text;
+                            canal.Temporadas = Convert.ToInt32(inputTemporada.Text);
+                            canal.Duracion = Convert.ToInt32(inputDuracion.Text);
+                            canal.Episodio = Convert.ToInt32(inputEpisodio.Text);
+                            canal.Ranking = Convert.ToInt32(inputRanking.Text);
+                            canal.Genero = (TipoGenero)Enum.Parse(typeof(TipoGenero), inputGenero.Text);
+                            canal.Director = inputDirector.Text;
+                        }
+                    }
+                }
+
+                ActualizarDGV();
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

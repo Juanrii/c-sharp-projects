@@ -8,17 +8,20 @@ namespace BE
 {
     public class BECliente
     {
-        public int Codigo { get; set; }
+        public Guid Codigo { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int DNI { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
-        public BECliente() { }
-
-        public BECliente(int codigo, string nombre, string apellido, int dNI, DateTime fechaNacimiento)
+        public BECliente() 
         {
-            Codigo = codigo;
+            Codigo = Guid.NewGuid();
+        }
+
+        public BECliente(string nombre, string apellido, int dNI, DateTime fechaNacimiento)
+        {
+            Codigo = Guid.NewGuid();
             Nombre = nombre;
             Apellido = apellido;
             DNI = dNI;

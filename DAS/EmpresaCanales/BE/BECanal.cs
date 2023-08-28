@@ -14,7 +14,17 @@ namespace BE
         public int Episodio { get; set; }
         public int Duracion { get; set; }
         public float Ranking { get; set; }
-        public string Genero { get; set; }
+            
+        public enum TipoGenero
+        {
+            Terror,
+            Comedia,
+            Accion,
+            Amor
+        }
+
+        public TipoGenero Genero { get; set; }
+
         public string Director { get; set; }
 
         public BEPaquete paquete;
@@ -24,7 +34,7 @@ namespace BE
             Codigo = Guid.NewGuid();
         }
 
-        public BECanal(string serie, int temporadas, int episodio, int duracion, float ranking, string genero, string director, BEPaquete paquete = null)
+        public BECanal(string serie, int temporadas, int episodio, int duracion, float ranking, TipoGenero genero, string director, BEPaquete paquete = null)
         {
             Serie = serie;
             Temporadas = temporadas;

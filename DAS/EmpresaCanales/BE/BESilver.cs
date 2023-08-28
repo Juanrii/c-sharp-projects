@@ -8,7 +8,7 @@ namespace BE
 {
     public class BESilver : BEPaquete
     {
-        protected float Abono = 0.15f;
+        public float Abono = 0.15f;
 
         public BESilver()
         {

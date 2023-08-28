@@ -18,5 +18,10 @@ namespace BE
         {
             return $"{Cliente.Nombre}";
         }
+
+        public float GetAbono()
+        {
+            return Abono;
+        }
     }
 }

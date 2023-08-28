@@ -34,12 +34,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvPaquetes = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dropDownClientes = new System.Windows.Forms.ComboBox();
             this.btnSilver = new System.Windows.Forms.RadioButton();
             this.btnPremium = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.inputGenero = new System.Windows.Forms.ComboBox();
             this.btnAgregarCanal = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvCanales = new System.Windows.Forms.DataGridView();
@@ -49,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.inputGenero = new System.Windows.Forms.TextBox();
             this.inputDirector = new System.Windows.Forms.TextBox();
             this.inputTemporada = new System.Windows.Forms.TextBox();
             this.inputEpisodio = new System.Windows.Forms.TextBox();
@@ -59,6 +58,7 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.dgvPaqueteCanales = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBoxPaquete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -73,14 +73,13 @@
             this.groupBoxPaquete.Controls.Add(this.button2);
             this.groupBoxPaquete.Controls.Add(this.button1);
             this.groupBoxPaquete.Controls.Add(this.dgvPaquetes);
-            this.groupBoxPaquete.Controls.Add(this.label9);
             this.groupBoxPaquete.Controls.Add(this.label8);
             this.groupBoxPaquete.Controls.Add(this.dropDownClientes);
             this.groupBoxPaquete.Controls.Add(this.btnSilver);
             this.groupBoxPaquete.Controls.Add(this.btnPremium);
-            this.groupBoxPaquete.Location = new System.Drawing.Point(12, 351);
+            this.groupBoxPaquete.Location = new System.Drawing.Point(12, 438);
             this.groupBoxPaquete.Name = "groupBoxPaquete";
-            this.groupBoxPaquete.Size = new System.Drawing.Size(1961, 374);
+            this.groupBoxPaquete.Size = new System.Drawing.Size(2353, 418);
             this.groupBoxPaquete.TabIndex = 0;
             this.groupBoxPaquete.TabStop = false;
             this.groupBoxPaquete.Text = "Paquete";
@@ -89,9 +88,10 @@
             // 
             this.labelRecaudado.AutoSize = true;
             this.labelRecaudado.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.labelRecaudado.Location = new System.Drawing.Point(395, 51);
+            this.labelRecaudado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecaudado.Location = new System.Drawing.Point(23, 360);
             this.labelRecaudado.Name = "labelRecaudado";
-            this.labelRecaudado.Size = new System.Drawing.Size(182, 25);
+            this.labelRecaudado.Size = new System.Drawing.Size(330, 42);
             this.labelRecaudado.TabIndex = 18;
             this.labelRecaudado.Text = "Total Recaudado:";
             // 
@@ -111,7 +111,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(350, 60);
             this.button1.TabIndex = 15;
-            this.button1.Text = "Crear";
+            this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -121,6 +121,7 @@
             this.dgvPaquetes.AllowUserToDeleteRows = false;
             this.dgvPaquetes.AllowUserToResizeColumns = false;
             this.dgvPaquetes.AllowUserToResizeRows = false;
+            this.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaquetes.ColumnHeadersHeight = 46;
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPaquetes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -130,18 +131,9 @@
             this.dgvPaquetes.RowHeadersWidth = 82;
             this.dgvPaquetes.RowTemplate.Height = 33;
             this.dgvPaquetes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaquetes.Size = new System.Drawing.Size(1130, 322);
+            this.dgvPaquetes.Size = new System.Drawing.Size(1540, 382);
             this.dgvPaquetes.TabIndex = 4;
             this.dgvPaquetes.SelectionChanged += new System.EventHandler(this.dgvPaquetes_SelectionChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(395, 222);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(210, 25);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Canal Seleccionado:";
             // 
             // label8
             // 
@@ -184,6 +176,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.inputGenero);
             this.groupBox2.Controls.Add(this.btnAgregarCanal);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.dgvCanales);
@@ -193,7 +187,6 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.inputGenero);
             this.groupBox2.Controls.Add(this.inputDirector);
             this.groupBox2.Controls.Add(this.inputTemporada);
             this.groupBox2.Controls.Add(this.inputEpisodio);
@@ -202,16 +195,25 @@
             this.groupBox2.Controls.Add(this.inputSerie);
             this.groupBox2.Location = new System.Drawing.Point(12, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1961, 293);
+            this.groupBox2.Size = new System.Drawing.Size(2353, 388);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Canales";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // inputGenero
+            // 
+            this.inputGenero.FormattingEnabled = true;
+            this.inputGenero.Location = new System.Drawing.Point(528, 167);
+            this.inputGenero.Name = "inputGenero";
+            this.inputGenero.Size = new System.Drawing.Size(222, 33);
+            this.inputGenero.TabIndex = 15;
             // 
             // btnAgregarCanal
             // 
-            this.btnAgregarCanal.Location = new System.Drawing.Point(400, 215);
+            this.btnAgregarCanal.Location = new System.Drawing.Point(22, 306);
             this.btnAgregarCanal.Name = "btnAgregarCanal";
-            this.btnAgregarCanal.Size = new System.Drawing.Size(350, 60);
+            this.btnAgregarCanal.Size = new System.Drawing.Size(239, 60);
             this.btnAgregarCanal.TabIndex = 14;
             this.btnAgregarCanal.Text = "Agregar";
             this.btnAgregarCanal.UseVisualStyleBackColor = true;
@@ -232,6 +234,7 @@
             this.dgvCanales.AllowUserToDeleteRows = false;
             this.dgvCanales.AllowUserToResizeColumns = false;
             this.dgvCanales.AllowUserToResizeRows = false;
+            this.dgvCanales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCanales.ColumnHeadersHeight = 46;
             this.dgvCanales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCanales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -241,7 +244,7 @@
             this.dgvCanales.RowHeadersWidth = 82;
             this.dgvCanales.RowTemplate.Height = 33;
             this.dgvCanales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCanales.Size = new System.Drawing.Size(1130, 236);
+            this.dgvCanales.Size = new System.Drawing.Size(1540, 343);
             this.dgvCanales.TabIndex = 3;
             this.dgvCanales.SelectionChanged += new System.EventHandler(this.dgvCanales_SelectionChanged);
             // 
@@ -299,13 +302,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Serie:";
             // 
-            // inputGenero
-            // 
-            this.inputGenero.Location = new System.Drawing.Point(528, 164);
-            this.inputGenero.Name = "inputGenero";
-            this.inputGenero.Size = new System.Drawing.Size(222, 31);
-            this.inputGenero.TabIndex = 6;
-            // 
             // inputDirector
             // 
             this.inputDirector.Location = new System.Drawing.Point(124, 230);
@@ -354,33 +350,43 @@
             this.dgvPaqueteCanales.AllowUserToDeleteRows = false;
             this.dgvPaqueteCanales.AllowUserToResizeColumns = false;
             this.dgvPaqueteCanales.AllowUserToResizeRows = false;
-            this.dgvPaqueteCanales.ColumnHeadersHeight = 46;
-            this.dgvPaqueteCanales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPaqueteCanales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPaqueteCanales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaqueteCanales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPaqueteCanales.Location = new System.Drawing.Point(826, 49);
+            this.dgvPaqueteCanales.Location = new System.Drawing.Point(22, 49);
             this.dgvPaqueteCanales.MultiSelect = false;
             this.dgvPaqueteCanales.Name = "dgvPaqueteCanales";
             this.dgvPaqueteCanales.RowHeadersWidth = 82;
             this.dgvPaqueteCanales.RowTemplate.Height = 33;
             this.dgvPaqueteCanales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPaqueteCanales.Size = new System.Drawing.Size(1111, 274);
+            this.dgvPaqueteCanales.Size = new System.Drawing.Size(2325, 449);
             this.dgvPaqueteCanales.TabIndex = 5;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvPaqueteCanales);
-            this.groupBox1.Location = new System.Drawing.Point(12, 755);
+            this.groupBox1.Location = new System.Drawing.Point(12, 882);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1961, 353);
+            this.groupBox1.Size = new System.Drawing.Size(2353, 377);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Canales Incluidos";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(400, 306);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(213, 60);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Actualizar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormPaquetes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2377, 1431);
+            this.ClientSize = new System.Drawing.Size(2377, 1298);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxPaquete);
@@ -411,7 +417,6 @@
         private System.Windows.Forms.TextBox inputRanking;
         private System.Windows.Forms.TextBox inputSerie;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox inputGenero;
         private System.Windows.Forms.TextBox inputDirector;
         private System.Windows.Forms.Button btnAgregarCanal;
         private System.Windows.Forms.Label label7;
@@ -422,7 +427,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvCanales;
         private System.Windows.Forms.DataGridView dgvPaquetes;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox dropDownClientes;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
@@ -431,5 +435,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelRecaudado;
+        private System.Windows.Forms.ComboBox inputGenero;
+        private System.Windows.Forms.Button button3;
     }
 }

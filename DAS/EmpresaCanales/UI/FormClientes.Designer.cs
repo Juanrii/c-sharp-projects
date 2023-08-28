@@ -33,13 +33,13 @@
             this.inputNombre = new System.Windows.Forms.TextBox();
             this.inputApellido = new System.Windows.Forms.TextBox();
             this.inputDNI = new System.Windows.Forms.TextBox();
-            this.inputCodigo = new System.Windows.Forms.TextBox();
             this.inputFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,15 +57,21 @@
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.AllowUserToResizeColumns = false;
+            this.dgvClientes.AllowUserToResizeRows = false;
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClientes.ColumnHeadersHeight = 46;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvClientes.Location = new System.Drawing.Point(12, 12);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersWidth = 82;
             this.dgvClientes.RowTemplate.Height = 33;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(999, 307);
             this.dgvClientes.TabIndex = 1;
+            this.dgvClientes.SelectionChanged += new System.EventHandler(this.dgvClientes_SelectionChanged);
             // 
             // inputNombre
             // 
@@ -88,16 +94,9 @@
             this.inputDNI.Size = new System.Drawing.Size(338, 31);
             this.inputDNI.TabIndex = 4;
             // 
-            // inputCodigo
-            // 
-            this.inputCodigo.Location = new System.Drawing.Point(240, 529);
-            this.inputCodigo.Name = "inputCodigo";
-            this.inputCodigo.Size = new System.Drawing.Size(338, 31);
-            this.inputCodigo.TabIndex = 5;
-            // 
             // inputFecha
             // 
-            this.inputFecha.Location = new System.Drawing.Point(240, 601);
+            this.inputFecha.Location = new System.Drawing.Point(240, 528);
             this.inputFecha.Name = "inputFecha";
             this.inputFecha.Size = new System.Drawing.Size(338, 31);
             this.inputFecha.TabIndex = 6;
@@ -129,36 +128,47 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "DNI:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 535);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 25);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Codigo:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(43, 607);
+            this.label5.Location = new System.Drawing.Point(43, 534);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(191, 25);
             this.label5.TabIndex = 11;
             this.label5.Text = "Fecha Nacimiento:";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(688, 408);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(123, 63);
+            this.btnEliminar.TabIndex = 12;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(688, 477);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(123, 63);
+            this.btnActualizar.TabIndex = 13;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 712);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inputFecha);
-            this.Controls.Add(this.inputCodigo);
             this.Controls.Add(this.inputDNI);
             this.Controls.Add(this.inputApellido);
             this.Controls.Add(this.inputNombre);
@@ -179,12 +189,12 @@
         private System.Windows.Forms.TextBox inputNombre;
         private System.Windows.Forms.TextBox inputApellido;
         private System.Windows.Forms.TextBox inputDNI;
-        private System.Windows.Forms.TextBox inputCodigo;
         private System.Windows.Forms.DateTimePicker inputFecha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

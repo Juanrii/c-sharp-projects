@@ -28,7 +28,7 @@ namespace UI
         {
             List<BECanal> ranking = new List<BECanal>();
 
-            foreach (BECanal canal in Form1.canales)
+            foreach (BECanal canal in FormInicial.canales)
             {
                 if (canal.Ranking > 3.5)
                 {

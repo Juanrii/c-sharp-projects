@@ -8,12 +8,13 @@ namespace BE
 {
     public class BEPremium : BEPaquete
     {
-        protected float Abono = 0.20f;
+        public float Abono = 0.20f;
 
         public BEPremium()
         {
             Codigo = Guid.NewGuid();
             Canales = new List<BECanal>();
         }
+
     }
 }
