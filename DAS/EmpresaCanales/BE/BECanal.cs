@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class BECanal
+    public class BECanal 
     {
         public Guid Codigo { get; set; }
         public string Serie { get; set; }
