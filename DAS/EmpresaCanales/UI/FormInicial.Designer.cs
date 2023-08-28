@@ -36,8 +36,8 @@ namespace UI
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paquetesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rankingSeriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,17 +87,10 @@ namespace UI
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rankingSeriesToolStripMenuItem});
+            this.estadisticasToolStripMenuItem});
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(135, 38);
             this.consultarToolStripMenuItem.Text = "Consultar";
-            // 
-            // rankingSeriesToolStripMenuItem
-            // 
-            this.rankingSeriesToolStripMenuItem.Name = "rankingSeriesToolStripMenuItem";
-            this.rankingSeriesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.rankingSeriesToolStripMenuItem.Text = "Ranking Series";
-            this.rankingSeriesToolStripMenuItem.Click += new System.EventHandler(this.rankingSeriesToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -105,6 +98,13 @@ namespace UI
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(79, 38);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // estadisticasToolStripMenuItem
+            // 
+            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
+            this.estadisticasToolStripMenuItem.Click += new System.EventHandler(this.estadisticasToolStripMenuItem_Click);
             // 
             // FormInicial
             // 
@@ -132,8 +132,8 @@ namespace UI
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paquetesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rankingSeriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
     }
 }
 

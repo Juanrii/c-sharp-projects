@@ -4,3 +4,9 @@
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\BE\obj\Debug\BE.dll
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\BE\obj\Debug\BE.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BE\bin\Debug\BE.dll
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BE\bin\Debug\BE.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BE\obj\Debug\BE.dll
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BE\obj\Debug\BE.pdb

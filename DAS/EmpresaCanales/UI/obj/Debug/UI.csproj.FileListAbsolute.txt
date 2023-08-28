@@ -45,3 +45,21 @@
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\UI\obj\Debug\UI.exe
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\UI\obj\Debug\UI.pdb
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\UI\obj\Debug\UI.FormInicial.resources
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\bin\Debug\UI.exe.config
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\bin\Debug\UI.exe
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\bin\Debug\UI.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\bin\Debug\BE.dll
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\bin\Debug\BLL.dll
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\bin\Debug\BE.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\bin\Debug\BLL.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.FormInicial.resources
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.FormClientes.resources
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.FormPaquetes.resources
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.Properties.Resources.resources
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.csproj.GenerateResource.cache
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.csproj.CopyComplete
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.exe
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\UI\obj\Debug\UI.FormEstadisticas.resources

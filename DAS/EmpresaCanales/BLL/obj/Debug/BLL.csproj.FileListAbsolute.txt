@@ -13,3 +13,12 @@
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\BLL\obj\Debug\BLL.csproj.CopyComplete
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\BLL\obj\Debug\BLL.dll
 \\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\EmpresaCanales - Ejercicio 6\EmpresaCanales\BLL\obj\Debug\BLL.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\bin\Debug\BLL.dll
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\bin\Debug\BLL.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\bin\Debug\BE.dll
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\bin\Debug\BE.pdb
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\obj\Debug\BLL.csproj.CopyComplete
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\obj\Debug\BLL.dll
+\\Mac\Home\Documents\juan\uai\Segundo Año\LUG\2023-Castelar\github\c-sharp-projects\DAS\EmpresaCanales\BLL\obj\Debug\BLL.pdb

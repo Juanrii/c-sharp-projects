@@ -79,13 +79,6 @@ namespace UI
             formPaquetes.Show();
         }
 
-        private void rankingSeriesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RankingSeries formRanking = new RankingSeries();
-            formRanking.MdiParent = this;
-            formRanking.Show();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -96,6 +89,13 @@ namespace UI
             DialogResult opcion = MessageBox.Show("Desea salir de la aplicacion?", "Aviso", MessageBoxButtons.YesNo);
             if (opcion == DialogResult.Yes)
                 Close();
+        }
+
+        private void estadisticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEstadisticas formEstadisticas = new FormEstadisticas();
+            formEstadisticas.MdiParent = this;
+            formEstadisticas.Show();
         }
     }
 }
