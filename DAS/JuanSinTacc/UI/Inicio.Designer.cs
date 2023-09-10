@@ -36,6 +36,7 @@ namespace UI
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,8 @@ namespace UI
             this.gestionarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
             this.productosToolStripMenuItem,
-            this.tiposDeProductosToolStripMenuItem});
+            this.tiposDeProductosToolStripMenuItem,
+            this.nuevaVentaToolStripMenuItem});
             this.gestionarToolStripMenuItem.Name = "gestionarToolStripMenuItem";
             this.gestionarToolStripMenuItem.Size = new System.Drawing.Size(136, 38);
             this.gestionarToolStripMenuItem.Text = "Gestionar";
@@ -97,6 +99,13 @@ namespace UI
             this.tiposDeProductosToolStripMenuItem.Text = "Tipos de Productos";
             this.tiposDeProductosToolStripMenuItem.Click += new System.EventHandler(this.tiposDeProductosToolStripMenuItem_Click);
             // 
+            // nuevaVentaToolStripMenuItem
+            // 
+            this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
+            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
+            this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -125,6 +134,7 @@ namespace UI
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiposDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaVentaToolStripMenuItem;
     }
 }
 

@@ -65,7 +65,7 @@ namespace DAL
             }
         }
 
-        public bool LeerScalar(string query)
+        public int ObtenerScalar(string query)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace DAL
                 int res = Convert.ToInt32(_command.ExecuteScalar());
                 _connection.Close();
 
-                return res > 0;
+                return res;
             }
             catch (SqlException ex)
             { 

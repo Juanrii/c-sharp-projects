@@ -45,6 +45,7 @@
     <Compile Include="BEProducto.cs" />
     <Compile Include="BETipo.cs" />
     <Compile Include="BEUsuario.cs" />
+    <Compile Include="BEVenta.cs" />
     <Compile Include="Entidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

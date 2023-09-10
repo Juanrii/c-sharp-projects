@@ -17,7 +17,7 @@ namespace BLL
             _mppUsuario = new MPPUsuario();
         }
 
-        public bool Buscar(BEUsuario usuario)
+        public int Buscar(BEUsuario usuario)
         {
             return _mppUsuario.Buscar(usuario);
         }

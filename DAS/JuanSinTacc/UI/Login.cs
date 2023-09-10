@@ -30,7 +30,7 @@ namespace UI
 
                 if (usuario is null) return;
 
-                if (! _bllUsuario.Buscar(usuario))
+                if (_bllUsuario.Buscar(usuario) <= 0)
                 {
                     MessageBox.Show("F no te conozco");
                     return;

@@ -12,6 +12,7 @@ namespace BE
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
         public BETipo Tipo { get; set; }
+        private int _cantidad;
         #endregion
 
         #region Constructores
@@ -24,6 +25,20 @@ namespace BE
         public BEProducto() { }
         #endregion
 
+        public void SetCantidad(int cantidad)
+        {
+            _cantidad = cantidad;
+        }
+
+        public int ObtenerCantidad()
+        {
+            return _cantidad;
+        }
+
+        public decimal ObtenerPrecioXCantidad()
+        {
+            return _cantidad * Precio;
+        }
         
     }
 }

@@ -50,5 +50,12 @@ namespace UI
             formTipo.MdiParent = this;
             formTipo.Show();
         }
+
+        private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVenta formVenta = new FormVenta();
+            formVenta.MdiParent = this;
+            formVenta.Show();
+        }
     }
 }

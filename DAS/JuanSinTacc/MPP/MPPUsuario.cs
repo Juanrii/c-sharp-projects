@@ -18,10 +18,10 @@ namespace MPP
             _acceso = new Acceso();
         }
 
-        public bool Buscar(BEUsuario usuario)
+        public int Buscar(BEUsuario usuario)
         {
             string query = $"SELECT COUNT(*) FROM Usuario WHERE Usuario.Usuario = '{usuario.Usuario}' AND Usuario.Contrasena = '{usuario.Contra}'";
-            return _acceso.LeerScalar(query);
+            return _acceso.ObtenerScalar(query);
         }
     }
 }
