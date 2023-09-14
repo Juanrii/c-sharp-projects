@@ -14,20 +14,16 @@ namespace UI
 {
     public partial class FormProducto : Form
     {
-        private BLLTipo _bllTipo;
         private BLLProducto _bllProducto;
 
         public FormProducto()
         {
             InitializeComponent();
-            _bllTipo = new BLLTipo();
             _bllProducto = new BLLProducto();
         }
 
         private void FormProducto_Load(object sender, EventArgs e)
         {
-            dgvTipos.DataSource = null;
-            dgvTipos.DataSource = _bllTipo.Listar();
 
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = _bllProducto.Listar();
@@ -38,11 +34,10 @@ namespace UI
 
         private void LlenarDropDownTipos()
         {
-            inputTipo.Items.Clear();
-            inputTipo.DisplayMember = "Nombre";
-            inputTipo.ValueMember   = "Codigo";
-            foreach (BETipo t in _bllTipo.Listar())
-                inputTipo.Items.Add(t);
+            inputProducto.Items.Clear();
+            inputProducto.DisplayMember = "Nombre";
+            inputProducto.ValueMember   = "Codigo";
+            
         }
 
         private void MostrarMesajeRequerido(bool mostrar = true)
@@ -91,7 +86,7 @@ namespace UI
         {
             inputNombre.Text = "";
             inputPrecio.Text = "";
-            inputTipo.SelectedIndex = -1;
+            inputProducto.SelectedIndex = -1;
         }
 
         private BEProducto ObtenerProducto()
@@ -104,11 +99,10 @@ namespace UI
                     throw new Exception("Campos incorrectos.Vuelva a ingresarlos por favor.");
                 }
 
-                BEProducto p = new BEProducto()
+                BECeliaco p = new BECeliaco()
                 {
                     Nombre = inputNombre.Text,
-                    Precio = Convert.ToDecimal(inputPrecio.Text),
-                    Tipo = (BETipo)inputTipo.SelectedItem
+                    Precio = Convert.ToDecimal(inputPrecio.Text)
                 };
 
                 return p;
@@ -126,7 +120,7 @@ namespace UI
         {
             return String.IsNullOrEmpty(inputNombre.Text.Trim())
                 || String.IsNullOrEmpty(inputPrecio.Text.Trim())
-                || inputTipo.SelectedIndex == -1;
+                || inputProducto.SelectedIndex == -1;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -142,7 +136,6 @@ namespace UI
                 BEProducto p = (BEProducto)dgvProductos.CurrentRow.DataBoundItem;
                 p.Nombre = inputNombre.Text;
                 p.Precio = Convert.ToDecimal(inputPrecio.Text);
-                p.Tipo = (BETipo)inputTipo.SelectedItem;
 
                 bool guardado = _bllProducto.Guardar(p);
 

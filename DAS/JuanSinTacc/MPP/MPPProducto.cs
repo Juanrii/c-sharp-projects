@@ -29,8 +29,7 @@ namespace MPP
             {
                 List<BEProducto> lista = new List<BEProducto>();
 
-                string query = $"SELECT p.Codigo, p.Nombre, p.Precio, t.Codigo as TipoCodigo, t.Nombre as Tipo from Producto p " +
-                    $"INNER JOIN Tipo t ON t.Codigo = p.Tipo";
+                string query = $"SELECT p.Codigo, p.Nombre, p.Precio FROM Producto p";
 
                 DataSet ds = _acceso.Leer(query);
 
@@ -38,15 +37,10 @@ namespace MPP
                 {
                     foreach (DataRow fila in ds.Tables[0].Rows)
                     {
-                        BEProducto producto = new BEProducto();
+                        BECeliaco producto = new BECeliaco();
                         producto.Codigo = Convert.ToInt32(fila["Codigo"]);
                         producto.Nombre = fila["Nombre"].ToString();
                         producto.Precio = Convert.ToDecimal(fila["Precio"]);
-                        producto.Tipo = new BETipo()
-                        {
-                            Codigo = Convert.ToInt32(fila["TipoCodigo"]),
-                            Nombre = fila["Tipo"].ToString()
-                        };
                         lista.Add(producto);
                     }
                 }
@@ -88,13 +82,13 @@ namespace MPP
 
         private string EditarRegistro(BEProducto objBE)
         {
-            return $"UPDATE Producto SET Nombre = '{objBE.Nombre}', Precio = {objBE.Precio}, Tipo = {objBE.Tipo.Codigo} " +
+            return $"UPDATE Producto SET Nombre = '{objBE.Nombre}', Precio = {objBE.Precio}" +
                 $"WHERE Codigo = {objBE.Codigo}";
         }
 
         private string NuevoRegistro(BEProducto objBE)
         {
-            return $"INSERT INTO Producto (Nombre, Precio, Tipo) VALUES('{objBE.Nombre}', {objBE.Precio}, {objBE.Tipo.Codigo})";
+            return $"INSERT INTO Producto (Nombre, Precio, Tipo) VALUES('{objBE.Nombre}', {objBE.Precio})";
         }
     }
 }

@@ -28,11 +28,6 @@ namespace BLL
             return _mppVenta.Guardar(ObjBE);
         }
 
-        public bool GuardarDetalleVenta(BEVenta venta, BEProducto producto)
-        {
-            return _mppVenta.GuardarDetalleVenta(venta, producto);
-        }
-
         public List<BEVenta> Listar()
         {
             throw new NotImplementedException();

@@ -56,10 +56,6 @@ namespace UI
             try
             {
                 _bllVenta.Guardar(_venta);
-                foreach (BEProducto producto in _venta.ListaProductos)
-                {
-                    _bllVenta.GuardarDetalleVenta(_venta, producto);
-                }
 
                 inputCliente.Enabled = true;
                 inputTotal.Text = "";

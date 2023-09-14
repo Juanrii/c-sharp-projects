@@ -27,7 +27,6 @@ namespace UI
 
             if (opcion == DialogResult.Yes)
                 Application.Exit();
-
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,13 +41,6 @@ namespace UI
             FormProducto formProducto = new FormProducto();
             formProducto.MdiParent = this;
             formProducto.Show();
-        }
-
-        private void tiposDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormTipoProducto formTipo = new FormTipoProducto();
-            formTipo.MdiParent = this;
-            formTipo.Show();
         }
 
         private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)

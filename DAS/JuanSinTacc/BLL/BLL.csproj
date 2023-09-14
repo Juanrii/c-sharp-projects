@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="BLLCliente.cs" />
     <Compile Include="BLLProducto.cs" />
-    <Compile Include="BLLTipo.cs" />
     <Compile Include="BLLUsuario.cs" />
     <Compile Include="BLLVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

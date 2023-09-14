@@ -22,7 +22,16 @@ namespace MPP
             try
             {
                 string query = $"INSERT INTO Venta (Cliente, Monto, Fecha) VALUES ({venta.Cliente.Codigo}, {venta.Monto}, '{venta.Fecha}')";
-                return _acceso.ExecuteNonQuery(query);
+                bool ventaCreada = _acceso.ExecuteNonQuery(query);
+
+                if (ventaCreada)
+                {
+                    int ventaCodigo = ObtenerUltimoIngresado();
+
+                    foreach (BEProducto producto in venta.ListaProductos)
+                        GuardarDetalleVenta(ventaCodigo, producto);
+                }
+                return ventaCreada;
             }
             catch (Exception ex)
             {
@@ -30,14 +39,12 @@ namespace MPP
             }
         }
 
-        public bool GuardarDetalleVenta(BEVenta venta, BEProducto producto)
+        private bool GuardarDetalleVenta(int ventaCodigo, BEProducto producto)
         {
             try
             {
-                venta.Codigo = ObtenerUltimoIngresado();
-
                 string query = $"INSERT INTO DetalleVenta (Venta, Producto, CantProducto, PrecioUnitario, Subtotal) " +
-                    $"VALUES ({venta.Codigo}, {producto.Codigo}, {producto.ObtenerCantidad()}, {producto.Precio}, {producto.ObtenerPrecioXCantidad()})";
+                    $"VALUES ({ventaCodigo}, {producto.Codigo}, {producto.ObtenerCantidad()}, {producto.Precio}, {producto.ObtenerPrecioXCantidad()})";
                 return _acceso.ExecuteNonQuery(query);
             }
             catch (Exception ex)

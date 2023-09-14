@@ -31,6 +31,8 @@ namespace UI
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.campoRequerido3 = new System.Windows.Forms.Label();
+            this.inputProducto = new System.Windows.Forms.ComboBox();
             this.campoRequerido2 = new System.Windows.Forms.Label();
             this.campoRequerido1 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -42,20 +44,13 @@ namespace UI
             this.inputPrecio = new System.Windows.Forms.TextBox();
             this.inputNombre = new System.Windows.Forms.TextBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.inputTipo = new System.Windows.Forms.ComboBox();
-            this.campoRequerido3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvTipos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Location = new System.Drawing.Point(15, 15);
@@ -70,7 +65,7 @@ namespace UI
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.campoRequerido3);
-            this.groupBox2.Controls.Add(this.inputTipo);
+            this.groupBox2.Controls.Add(this.inputProducto);
             this.groupBox2.Controls.Add(this.campoRequerido2);
             this.groupBox2.Controls.Add(this.campoRequerido1);
             this.groupBox2.Controls.Add(this.btnEliminar);
@@ -89,6 +84,26 @@ namespace UI
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gestionar Productos";
+            // 
+            // campoRequerido3
+            // 
+            this.campoRequerido3.AutoSize = true;
+            this.campoRequerido3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoRequerido3.ForeColor = System.Drawing.Color.Red;
+            this.campoRequerido3.Location = new System.Drawing.Point(142, 232);
+            this.campoRequerido3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.campoRequerido3.Name = "campoRequerido3";
+            this.campoRequerido3.Size = new System.Drawing.Size(204, 26);
+            this.campoRequerido3.TabIndex = 14;
+            this.campoRequerido3.Text = "Campo Requerido";
+            // 
+            // inputProducto
+            // 
+            this.inputProducto.FormattingEnabled = true;
+            this.inputProducto.Location = new System.Drawing.Point(147, 185);
+            this.inputProducto.Name = "inputProducto";
+            this.inputProducto.Size = new System.Drawing.Size(197, 33);
+            this.inputProducto.TabIndex = 13;
             // 
             // campoRequerido2
             // 
@@ -156,12 +171,12 @@ namespace UI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 185);
+            this.label3.Location = new System.Drawing.Point(31, 188);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 25);
+            this.label3.Size = new System.Drawing.Size(104, 25);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Tipo:";
+            this.label3.Text = "Producto:";
             // 
             // label2
             // 
@@ -210,52 +225,9 @@ namespace UI
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 82;
-            this.dgvProductos.Size = new System.Drawing.Size(1014, 402);
+            this.dgvProductos.Size = new System.Drawing.Size(1516, 402);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
-            // 
-            // inputTipo
-            // 
-            this.inputTipo.FormattingEnabled = true;
-            this.inputTipo.Location = new System.Drawing.Point(147, 185);
-            this.inputTipo.Name = "inputTipo";
-            this.inputTipo.Size = new System.Drawing.Size(197, 33);
-            this.inputTipo.TabIndex = 13;
-            // 
-            // campoRequerido3
-            // 
-            this.campoRequerido3.AutoSize = true;
-            this.campoRequerido3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoRequerido3.ForeColor = System.Drawing.Color.Red;
-            this.campoRequerido3.Location = new System.Drawing.Point(142, 232);
-            this.campoRequerido3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.campoRequerido3.Name = "campoRequerido3";
-            this.campoRequerido3.Size = new System.Drawing.Size(204, 26);
-            this.campoRequerido3.TabIndex = 14;
-            this.campoRequerido3.Text = "Campo Requerido";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvTipos);
-            this.groupBox3.Location = new System.Drawing.Point(1035, 37);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(505, 404);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tipo de Productos:";
-            // 
-            // dgvTipos
-            // 
-            this.dgvTipos.AllowUserToAddRows = false;
-            this.dgvTipos.AllowUserToDeleteRows = false;
-            this.dgvTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipos.Location = new System.Drawing.Point(6, 30);
-            this.dgvTipos.Name = "dgvTipos";
-            this.dgvTipos.ReadOnly = true;
-            this.dgvTipos.RowHeadersWidth = 82;
-            this.dgvTipos.RowTemplate.Height = 33;
-            this.dgvTipos.Size = new System.Drawing.Size(487, 368);
-            this.dgvTipos.TabIndex = 0;
             // 
             // FormProducto
             // 
@@ -270,8 +242,6 @@ namespace UI
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,8 +262,6 @@ namespace UI
         private System.Windows.Forms.TextBox inputNombre;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label campoRequerido3;
-        private System.Windows.Forms.ComboBox inputTipo;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvTipos;
+        private System.Windows.Forms.ComboBox inputProducto;
     }
 }

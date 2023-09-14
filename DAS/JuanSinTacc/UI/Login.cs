@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 using BE;
 using BLL;
 
@@ -56,13 +57,44 @@ namespace UI
                 return new BEUsuario()
                 {
                     Usuario = inputUsuario.Text,
-                    Contra  = inputContra.Text,
+                    Contra  = inputContra.Text
                 };
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return null;
+            }
+            
+        }
+
+        private void inputContra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            DialogResult res = MessageBox.Show($"Desea crear el usuario: {inputUsuario.Text}?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (res == DialogResult.Yes)
+            {
+                try
+                {
+                    BEUsuario nuevoUsuario = ObtenerCampos();
+                    bool guardado = _bllUsuario.Agregar(nuevoUsuario);
+
+                    inputUsuario.Text = inputContra.Text = "";
+
+                    if (guardado)
+                        MessageBox.Show("Nuevo usuario registrado.", "Exito");
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
             
         }

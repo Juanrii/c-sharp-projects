@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="MPPCliente.cs" />
     <Compile Include="MPPProducto.cs" />
-    <Compile Include="MPPTipo.cs" />
     <Compile Include="MPPUsuario.cs" />
     <Compile Include="MPPVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
