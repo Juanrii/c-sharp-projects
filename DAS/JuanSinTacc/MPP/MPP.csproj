@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MPPVegano.cs" />
+    <Compile Include="MPPCeliaco.cs" />
     <Compile Include="MPPCliente.cs" />
     <Compile Include="MPPProducto.cs" />
     <Compile Include="MPPUsuario.cs" />

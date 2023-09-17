@@ -9,37 +9,8 @@ using Abstraccion;
 
 namespace BLL
 {
-    public class BLLProducto : IGestor<BEProducto>
+    public abstract class BLLProducto
     {
-        #region Propiedades
-        private MPPProducto _mppProducto;
-        #endregion
-
-        #region Constructor
-        public BLLProducto()
-        {
-            _mppProducto = new MPPProducto();
-        }
-        #endregion
-
-        public bool Baja(BEProducto ObjBE)
-        {
-            return _mppProducto.Baja(ObjBE);
-        }
-
-        public bool Guardar(BEProducto ObjBE)
-        {
-            return _mppProducto.Guardar(ObjBE);
-        }
-
-        public List<BEProducto> Listar()
-        {
-            return _mppProducto.Listar();
-        }
-
-        public BEProducto ListarObjeto(BEProducto ObjBE)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

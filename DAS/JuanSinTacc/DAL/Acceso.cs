@@ -15,6 +15,8 @@ namespace DAL
 
         private SqlCommand _command;
 
+        private SqlTransaction _tx;
+
         public DataSet Leer(string query)
         {
             DataSet dataSet = new DataSet();
@@ -45,18 +47,27 @@ namespace DAL
             try
             {
                 _connection.Open();
+
+                _tx = _connection.BeginTransaction();
+            
                 _command = new SqlCommand(query, _connection);
                 _command.CommandType = CommandType.Text;
+                _command.Transaction = _tx;
 
                 int filasAfectadas = _command.ExecuteNonQuery();
+
+                _tx.Commit();
+
                 return true;
             }
             catch (SqlException ex)
             {
+                _tx.Rollback();
                 throw ex;
             }
             catch (Exception ex)
             {
+                _tx.Rollback();
                 throw ex;
             }
             finally

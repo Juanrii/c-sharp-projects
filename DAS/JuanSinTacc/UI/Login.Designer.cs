@@ -54,7 +54,6 @@ namespace UI
             this.inputContra.PasswordChar = '*';
             this.inputContra.Size = new System.Drawing.Size(196, 31);
             this.inputContra.TabIndex = 1;
-            this.inputContra.TextChanged += new System.EventHandler(this.inputContra_TextChanged);
             // 
             // label1
             // 

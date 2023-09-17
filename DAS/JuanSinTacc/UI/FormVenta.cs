@@ -27,7 +27,7 @@ namespace UI
             InitializeComponent();
             _bllVenta = new BLLVenta();
             _bllCliente = new BLLCliente();
-            _bllProducto = new BLLProducto();
+            //_bllProducto = new BLLProducto();
             _listaProd = new List<BEProducto>();
             _venta = new BEVenta();
 
@@ -40,8 +40,8 @@ namespace UI
             inputProducto.Items.Clear();
             inputProducto.DisplayMember = "Nombre";
             inputProducto.ValueMember = "Codigo";
-            foreach (BEProducto p in _bllProducto.Listar())
-                inputProducto.Items.Add(p);
+            //foreach (BEProducto p in _bllProducto.Listar())
+            //    inputProducto.Items.Add(p);
 
 
             dgvVentaProducto.Columns.Add("Producto", "Producto");

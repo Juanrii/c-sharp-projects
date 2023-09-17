@@ -20,8 +20,17 @@ namespace MPP
 
         public int Buscar(BEUsuario usuario)
         {
-            string query = $"SELECT COUNT(*) FROM Usuario WHERE Usuario.Usuario = '{usuario.Usuario}' AND Usuario.Contrasena = '{usuario.Contra}'";
-            return _acceso.ObtenerScalar(query);
+            try
+            {
+                string query = $"SELECT COUNT(*) FROM Usuario WHERE Usuario.Usuario = '{usuario.Usuario}' AND Usuario.Contrasena = '{usuario.Contra}'";
+                return _acceso.ObtenerScalar(query);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         public bool Agregar(BEUsuario nuevoUsuario)

@@ -14,30 +14,33 @@ namespace UI
 {
     public partial class FormProducto : Form
     {
-        private BLLProducto _bllProducto;
+        private BLLCeliaco _bllCeliaco;
+        private BLLVegano _bllVegano;
 
         public FormProducto()
         {
             InitializeComponent();
-            _bllProducto = new BLLProducto();
+            _bllCeliaco = new BLLCeliaco();
+            _bllVegano  = new BLLVegano();
         }
 
         private void FormProducto_Load(object sender, EventArgs e)
         {
 
             dgvProductos.DataSource = null;
-            dgvProductos.DataSource = _bllProducto.Listar();
+            dgvProductos.DataSource = _bllCeliaco.Listar();
 
             MostrarMesajeRequerido(false);
-            LlenarDropDownTipos();
+            LlenarDropDown();
         }
 
-        private void LlenarDropDownTipos()
+        private void LlenarDropDown()
         {
             inputProducto.Items.Clear();
             inputProducto.DisplayMember = "Nombre";
             inputProducto.ValueMember   = "Codigo";
-            
+            inputProducto.Items.Add("Celiaco");
+            inputProducto.Items.Add("Vegano");
         }
 
         private void MostrarMesajeRequerido(bool mostrar = true)
@@ -65,13 +68,13 @@ namespace UI
 
                 if (producto is null) return;
 
-                bool guardado = _bllProducto.Guardar(producto);
+                bool guardado = producto is BECeliaco ? _bllCeliaco.Guardar(producto) : _bllVegano.Guardar(producto);
 
                 if (guardado)
                 {
                     LimpiarCampos();
-                    dgvProductos.DataSource = null;
-                    dgvProductos.DataSource = _bllProducto.Listar();
+                    //dgvProductos.DataSource = null;
+                    //dgvProductos.DataSource = _bllProducto.Listar();
                     MostrarMesajeRequerido(false);
                 }
             }
@@ -99,13 +102,26 @@ namespace UI
                     throw new Exception("Campos incorrectos.Vuelva a ingresarlos por favor.");
                 }
 
-                BECeliaco p = new BECeliaco()
-                {
-                    Nombre = inputNombre.Text,
-                    Precio = Convert.ToDecimal(inputPrecio.Text)
-                };
+                BEProducto producto = null;
 
-                return p;
+                if (inputProducto.Text == "Celiaco")
+                {
+                    producto = new BECeliaco()
+                    {
+                        Nombre = inputNombre.Text,
+                        Precio = Convert.ToDecimal(inputPrecio.Text)
+                    };
+                }
+                else if (inputProducto.Text == "Vegano")
+                {
+                    producto = new BEVegano()
+                    {
+                        Nombre = inputNombre.Text,
+                        Precio = Convert.ToDecimal(inputPrecio.Text)
+                    };
+                }
+
+                return producto;
             }
             catch (Exception ex)
             {
@@ -137,15 +153,15 @@ namespace UI
                 p.Nombre = inputNombre.Text;
                 p.Precio = Convert.ToDecimal(inputPrecio.Text);
 
-                bool guardado = _bllProducto.Guardar(p);
+                //bool guardado = _bllProducto.Guardar(p);
 
-                if (guardado)
-                {
-                    dgvProductos.DataSource = null;
-                    dgvProductos.DataSource = _bllProducto.Listar();
-                    LimpiarCampos();
-                    MostrarMesajeRequerido(false);
-                }
+                //if (guardado)
+                //{
+                //    dgvProductos.DataSource = null;
+                //    //dgvProductos.DataSource = _bllProducto.Listar();
+                //    LimpiarCampos();
+                //    MostrarMesajeRequerido(false);
+                //}
             }
             catch (Exception ex)
             {
@@ -172,15 +188,15 @@ namespace UI
 
                 if (res == DialogResult.Yes)
                 {
-                    bool eliminado = _bllProducto.Baja(p);
+                    //bool eliminado = _bllProducto.Baja(p);
 
-                    if (eliminado)
-                    {
-                        dgvProductos.DataSource = null;
-                        dgvProductos.DataSource = _bllProducto.Listar();
-                        LimpiarCampos();
-                        MostrarMesajeRequerido(false);
-                    }
+                    //if (eliminado)
+                    //{
+                    //    dgvProductos.DataSource = null;
+                    //    //dgvProductos.DataSource = _bllProducto.Listar();
+                    //    LimpiarCampos();
+                    //    MostrarMesajeRequerido(false);
+                    //}
                 }
             }
             catch (Exception ex)

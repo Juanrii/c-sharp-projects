@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography;
 using BE;
 using BLL;
 
@@ -32,10 +24,7 @@ namespace UI
                 if (usuario is null) return;
 
                 if (_bllUsuario.Buscar(usuario) <= 0)
-                {
-                    MessageBox.Show("F no te conozco");
-                    return;
-                }
+                    throw new Exception("El usuario ingresado no existe. Por favor vuelva a intentar.");
 
                 Inicio inicio = new Inicio();
                 inicio.Show();
@@ -43,7 +32,8 @@ namespace UI
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Aviso");
+                return;
             }
         }
 
@@ -51,8 +41,8 @@ namespace UI
         {
             try
             {
-                if (String.IsNullOrEmpty(inputUsuario.Text) || String.IsNullOrEmpty(inputContra.Text))
-                    throw new Exception("Campos incorrectos.Vuelva a ingresarlos por favor.");
+                if (String.IsNullOrEmpty(inputUsuario.Text.Trim()) || String.IsNullOrEmpty(inputContra.Text))
+                    throw new Exception("Campos incorrectos. Vuelva a ingresarlos por favor.");
 
                 return new BEUsuario()
                 {
@@ -68,21 +58,19 @@ namespace UI
             
         }
 
-        private void inputContra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
+            BEUsuario nuevoUsuario = ObtenerCampos();
 
-            DialogResult res = MessageBox.Show($"Desea crear el usuario: {inputUsuario.Text}?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (nuevoUsuario is null) return;
+
+            DialogResult res = MessageBox.Show($"Desea crear el usuario: {inputUsuario.Text}?", "Aviso", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (res == DialogResult.Yes)
             {
                 try
                 {
-                    BEUsuario nuevoUsuario = ObtenerCampos();
                     bool guardado = _bllUsuario.Agregar(nuevoUsuario);
 
                     inputUsuario.Text = inputContra.Text = "";
@@ -90,10 +78,10 @@ namespace UI
                     if (guardado)
                         MessageBox.Show("Nuevo usuario registrado.", "Exito");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    throw;
+                    MessageBox.Show(ex.Message);
+                    return;
                 }
             }
             

@@ -33,14 +33,14 @@ namespace BLL
             return _mppCliente.Guardar(ObjBE);
         }
 
-        public BECliente ListarObjeto(BECliente ObjBE)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<BECliente> Listar()
         {
             return _mppCliente.Listar();
+        }
+
+        public BECliente ListarObjeto(BECliente ObjBE)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
