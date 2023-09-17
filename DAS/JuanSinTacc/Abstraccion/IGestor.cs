@@ -11,6 +11,5 @@ namespace Abstraccion
         bool Guardar(T ObjBE);
         bool Baja(T ObjBE);
         List<T> Listar();
-        T ListarObjeto(T ObjBE);
     }
 }

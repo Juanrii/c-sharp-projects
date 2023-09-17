@@ -11,6 +11,5 @@ namespace BLL
 {
     public abstract class BLLProducto
     {
-        
     }
 }

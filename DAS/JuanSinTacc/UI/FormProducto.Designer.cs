@@ -31,7 +31,6 @@ namespace UI
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.campoRequerido3 = new System.Windows.Forms.Label();
             this.inputProducto = new System.Windows.Forms.ComboBox();
             this.campoRequerido2 = new System.Windows.Forms.Label();
             this.campoRequerido1 = new System.Windows.Forms.Label();
@@ -44,27 +43,39 @@ namespace UI
             this.inputPrecio = new System.Windows.Forms.TextBox();
             this.inputNombre = new System.Windows.Forms.TextBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.inputStock = new System.Windows.Forms.NumericUpDown();
+            this.inputCantidad = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.radioBtnCeliacos = new System.Windows.Forms.RadioButton();
+            this.radioBtnVeganos = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputStock)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioBtnVeganos);
+            this.groupBox1.Controls.Add(this.radioBtnCeliacos);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Location = new System.Drawing.Point(15, 15);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(1552, 750);
+            this.groupBox1.Size = new System.Drawing.Size(1552, 875);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.campoRequerido3);
+            this.groupBox2.Controls.Add(this.inputCantidad);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.inputStock);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.inputProducto);
             this.groupBox2.Controls.Add(this.campoRequerido2);
             this.groupBox2.Controls.Add(this.campoRequerido1);
@@ -76,33 +87,21 @@ namespace UI
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.inputPrecio);
             this.groupBox2.Controls.Add(this.inputNombre);
-            this.groupBox2.Location = new System.Drawing.Point(12, 450);
+            this.groupBox2.Location = new System.Drawing.Point(12, 504);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox2.Size = new System.Drawing.Size(1528, 288);
+            this.groupBox2.Size = new System.Drawing.Size(1528, 359);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gestionar Productos";
             // 
-            // campoRequerido3
-            // 
-            this.campoRequerido3.AutoSize = true;
-            this.campoRequerido3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoRequerido3.ForeColor = System.Drawing.Color.Red;
-            this.campoRequerido3.Location = new System.Drawing.Point(142, 232);
-            this.campoRequerido3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.campoRequerido3.Name = "campoRequerido3";
-            this.campoRequerido3.Size = new System.Drawing.Size(204, 26);
-            this.campoRequerido3.TabIndex = 14;
-            this.campoRequerido3.Text = "Campo Requerido";
-            // 
             // inputProducto
             // 
             this.inputProducto.FormattingEnabled = true;
-            this.inputProducto.Location = new System.Drawing.Point(147, 185);
+            this.inputProducto.Location = new System.Drawing.Point(151, 235);
             this.inputProducto.Name = "inputProducto";
-            this.inputProducto.Size = new System.Drawing.Size(197, 33);
+            this.inputProducto.Size = new System.Drawing.Size(199, 33);
             this.inputProducto.TabIndex = 13;
             // 
             // campoRequerido2
@@ -110,7 +109,7 @@ namespace UI
             this.campoRequerido2.AutoSize = true;
             this.campoRequerido2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoRequerido2.ForeColor = System.Drawing.Color.Red;
-            this.campoRequerido2.Location = new System.Drawing.Point(542, 119);
+            this.campoRequerido2.Location = new System.Drawing.Point(520, 190);
             this.campoRequerido2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.campoRequerido2.Name = "campoRequerido2";
             this.campoRequerido2.Size = new System.Drawing.Size(204, 26);
@@ -122,7 +121,7 @@ namespace UI
             this.campoRequerido1.AutoSize = true;
             this.campoRequerido1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoRequerido1.ForeColor = System.Drawing.Color.Red;
-            this.campoRequerido1.Location = new System.Drawing.Point(142, 119);
+            this.campoRequerido1.Location = new System.Drawing.Point(146, 190);
             this.campoRequerido1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.campoRequerido1.Name = "campoRequerido1";
             this.campoRequerido1.Size = new System.Drawing.Size(204, 26);
@@ -133,7 +132,7 @@ namespace UI
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(1300, 75);
+            this.btnEliminar.Location = new System.Drawing.Point(1304, 146);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(216, 133);
@@ -146,7 +145,7 @@ namespace UI
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Gold;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(1048, 75);
+            this.btnModificar.Location = new System.Drawing.Point(1052, 146);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(6);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(216, 133);
@@ -159,7 +158,7 @@ namespace UI
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.GreenYellow;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(798, 75);
+            this.btnAgregar.Location = new System.Drawing.Point(802, 146);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(6);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(216, 133);
@@ -171,7 +170,7 @@ namespace UI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 188);
+            this.label3.Location = new System.Drawing.Point(35, 238);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 25);
@@ -181,7 +180,7 @@ namespace UI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(442, 81);
+            this.label2.Location = new System.Drawing.Point(420, 152);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 25);
@@ -191,7 +190,7 @@ namespace UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 81);
+            this.label1.Location = new System.Drawing.Point(46, 152);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 25);
@@ -200,7 +199,7 @@ namespace UI
             // 
             // inputPrecio
             // 
-            this.inputPrecio.Location = new System.Drawing.Point(548, 75);
+            this.inputPrecio.Location = new System.Drawing.Point(526, 146);
             this.inputPrecio.Margin = new System.Windows.Forms.Padding(6);
             this.inputPrecio.Name = "inputPrecio";
             this.inputPrecio.Size = new System.Drawing.Size(196, 31);
@@ -208,10 +207,10 @@ namespace UI
             // 
             // inputNombre
             // 
-            this.inputNombre.Location = new System.Drawing.Point(148, 75);
+            this.inputNombre.Location = new System.Drawing.Point(152, 146);
             this.inputNombre.Margin = new System.Windows.Forms.Padding(6);
             this.inputNombre.Name = "inputNombre";
-            this.inputNombre.Size = new System.Drawing.Size(196, 31);
+            this.inputNombre.Size = new System.Drawing.Size(198, 31);
             this.inputNombre.TabIndex = 0;
             // 
             // dgvProductos
@@ -220,7 +219,7 @@ namespace UI
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(12, 37);
+            this.dgvProductos.Location = new System.Drawing.Point(12, 90);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(6);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
@@ -229,19 +228,81 @@ namespace UI
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(427, 292);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 25);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Stock:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // inputStock
+            // 
+            this.inputStock.Location = new System.Drawing.Point(523, 292);
+            this.inputStock.Name = "inputStock";
+            this.inputStock.Size = new System.Drawing.Size(199, 31);
+            this.inputStock.TabIndex = 18;
+            // 
+            // inputCantidad
+            // 
+            this.inputCantidad.FormattingEnabled = true;
+            this.inputCantidad.Location = new System.Drawing.Point(525, 235);
+            this.inputCantidad.Name = "inputCantidad";
+            this.inputCantidad.Size = new System.Drawing.Size(197, 33);
+            this.inputCantidad.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(407, 238);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 25);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Cantidad:";
+            // 
+            // radioBtnCeliacos
+            // 
+            this.radioBtnCeliacos.AutoSize = true;
+            this.radioBtnCeliacos.Location = new System.Drawing.Point(12, 52);
+            this.radioBtnCeliacos.Name = "radioBtnCeliacos";
+            this.radioBtnCeliacos.Size = new System.Drawing.Size(126, 29);
+            this.radioBtnCeliacos.TabIndex = 2;
+            this.radioBtnCeliacos.TabStop = true;
+            this.radioBtnCeliacos.Text = "Celiacos";
+            this.radioBtnCeliacos.UseVisualStyleBackColor = true;
+            this.radioBtnCeliacos.CheckedChanged += new System.EventHandler(this.radioBtnCeliacos_CheckedChanged);
+            // 
+            // radioBtnVeganos
+            // 
+            this.radioBtnVeganos.AutoSize = true;
+            this.radioBtnVeganos.Location = new System.Drawing.Point(163, 52);
+            this.radioBtnVeganos.Name = "radioBtnVeganos";
+            this.radioBtnVeganos.Size = new System.Drawing.Size(128, 29);
+            this.radioBtnVeganos.TabIndex = 3;
+            this.radioBtnVeganos.TabStop = true;
+            this.radioBtnVeganos.Text = "Veganos";
+            this.radioBtnVeganos.UseVisualStyleBackColor = true;
+            this.radioBtnVeganos.CheckedChanged += new System.EventHandler(this.radioBtnVeganos_CheckedChanged);
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1576, 783);
+            this.ClientSize = new System.Drawing.Size(1801, 1057);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormProducto";
             this.Text = "FormProducto";
             this.Load += new System.EventHandler(this.FormProducto_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputStock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,7 +322,12 @@ namespace UI
         private System.Windows.Forms.TextBox inputPrecio;
         private System.Windows.Forms.TextBox inputNombre;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.Label campoRequerido3;
         private System.Windows.Forms.ComboBox inputProducto;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown inputStock;
+        private System.Windows.Forms.ComboBox inputCantidad;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton radioBtnVeganos;
+        private System.Windows.Forms.RadioButton radioBtnCeliacos;
     }
 }

@@ -23,11 +23,11 @@ namespace MPP
         }
         #endregion
 
-        public List<BEProducto> Listar()
+        public List<BECeliaco> Listar()
         {
             try
             {
-                List<BEProducto> lista = new List<BEProducto>();
+                List<BECeliaco> lista = new List<BECeliaco>();
 
                 string query = $"SELECT p.Codigo, p.Nombre, p.Precio FROM Producto p";
 
@@ -67,11 +67,11 @@ namespace MPP
             }
         }
 
-        public bool Guardar(BEProducto objBE)
+        public bool Guardar(BECeliaco producto)
         {
             try
             {
-                string query = objBE.Codigo == 0 ? NuevoRegistro(objBE) : EditarRegistro(objBE);
+                string query = producto.Codigo == 0 ? NuevoRegistro(producto) : EditarRegistro(producto);
                 return _acceso.ExecuteNonQuery(query);
             }
             catch (Exception ex)
@@ -80,15 +80,15 @@ namespace MPP
             }
         }
 
-        private string EditarRegistro(BEProducto objBE)
+        private string EditarRegistro(BEProducto producto)
         {
-            return $"UPDATE Producto SET Nombre = '{objBE.Nombre}', Precio = {objBE.Precio}" +
-                $"WHERE Codigo = {objBE.Codigo}";
+            return $"UPDATE Producto SET Nombre = '{producto.Nombre}', Precio = {producto.Precio}, Stock = {producto.Stock}, Cantidad = {Convert.ToInt32(producto.cantidad)}" +
+                $"WHERE Codigo = {producto.Codigo}";
         }
 
-        private string NuevoRegistro(BEProducto objBE)
+        private string NuevoRegistro(BECeliaco producto)
         {
-            return $"INSERT INTO Producto (Nombre, Precio) VALUES('{objBE.Nombre}', {objBE.Precio})";
+            return $"INSERT INTO Producto (Nombre, Precio, Stock, Cantidad) VALUES('{producto.Nombre}', {producto.Precio}, {producto.Stock}, {Convert.ToInt32(producto.cantidad)})";
         }
     }
 }

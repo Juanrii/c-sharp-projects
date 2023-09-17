@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BE;
+﻿using BE;
 using BLL;
+using System;
+using System.Windows.Forms;
 
 namespace UI
 {
@@ -26,12 +19,21 @@ namespace UI
 
         private void FormProducto_Load(object sender, EventArgs e)
         {
+            radioBtnCeliacos.Checked = true;
 
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = _bllCeliaco.Listar();
 
+            // Orden columnas del dgv
+            dgvProductos.Columns["Codigo"].DisplayIndex   = 0;
+            dgvProductos.Columns["Nombre"].DisplayIndex   = 1;
+            dgvProductos.Columns["Precio"].DisplayIndex   = 2;
+            dgvProductos.Columns["Stock"].DisplayIndex    = 3;
+            dgvProductos.Columns["Cantidad"].DisplayIndex = 4;
+
             MostrarMesajeRequerido(false);
             LlenarDropDown();
+            LimpiarCampos();
         }
 
         private void LlenarDropDown()
@@ -41,6 +43,10 @@ namespace UI
             inputProducto.ValueMember   = "Codigo";
             inputProducto.Items.Add("Celiaco");
             inputProducto.Items.Add("Vegano");
+            inputProducto.SelectedItem = "Celiaco";
+
+            inputCantidad.Items.Clear();
+            inputCantidad.DataSource = Enum.GetValues(typeof(BEProducto.Cantidad));
         }
 
         private void MostrarMesajeRequerido(bool mostrar = true)
@@ -49,13 +55,11 @@ namespace UI
             {
                 campoRequerido1.Show();
                 campoRequerido2.Show();
-                campoRequerido3.Show();
             }
             else
             {
                 campoRequerido1.Hide();
                 campoRequerido2.Hide();
-                campoRequerido3.Hide();
             }
 
         }
@@ -64,18 +68,67 @@ namespace UI
         {
             try
             {
-                BEProducto producto = ObtenerProducto();
-
-                if (producto is null) return;
-
-                bool guardado = producto is BECeliaco ? _bllCeliaco.Guardar(producto) : _bllVegano.Guardar(producto);
-
-                if (guardado)
+                if (CamposInvalidos())
                 {
-                    LimpiarCampos();
-                    //dgvProductos.DataSource = null;
-                    //dgvProductos.DataSource = _bllProducto.Listar();
-                    MostrarMesajeRequerido(false);
+                    MostrarMesajeRequerido(true);
+                    throw new Exception("Campos incorrectos. Vuelva a ingresarlos por favor.");
+                }
+
+                bool guardado;
+
+                if (inputProducto.Text == "Celiaco")
+                {
+                    BECeliaco producto = new BECeliaco()
+                    {
+                        Nombre = inputNombre.Text,
+                        Precio = Convert.ToDecimal(inputPrecio.Text),
+                        cantidad = (BEProducto.Cantidad)inputCantidad.SelectedItem,
+                        Stock = Convert.ToInt32(inputStock.Value)
+                    };
+
+                    guardado = _bllCeliaco.Guardar(producto);
+
+                    if (guardado)
+                    {
+                        LimpiarCampos();
+                        dgvProductos.DataSource = null;
+                        dgvProductos.DataSource = _bllCeliaco.Listar();
+                        MostrarMesajeRequerido(false);
+                        // Orden columnas del dgv
+                        dgvProductos.Columns["Codigo"].DisplayIndex = 0;
+                        dgvProductos.Columns["Nombre"].DisplayIndex = 1;
+                        dgvProductos.Columns["Precio"].DisplayIndex = 2;
+                        dgvProductos.Columns["Stock"].DisplayIndex = 3;
+                        dgvProductos.Columns["Cantidad"].DisplayIndex = 4;
+                    }
+                }
+                else if (inputProducto.Text == "Vegano")
+                {
+                    BEVegano producto = new BEVegano()
+                    {
+                        Nombre = inputNombre.Text,
+                        Precio = Convert.ToDecimal(inputPrecio.Text),
+                        cantidad = (BEProducto.Cantidad)inputCantidad.SelectedItem,
+                        Stock = Convert.ToInt32(inputStock.Value),
+                        Huevo = 0
+                    };
+
+                    guardado = _bllVegano.Guardar(producto);
+
+                    if (guardado)
+                    {
+                        LimpiarCampos();
+                        dgvProductos.DataSource = null;
+                        dgvProductos.DataSource = _bllVegano.Listar();
+                        MostrarMesajeRequerido(false);
+                        // Orden columnas del dgv
+                        dgvProductos.Columns["Codigo"].DisplayIndex = 0;
+                        dgvProductos.Columns["Nombre"].DisplayIndex = 1;
+                        dgvProductos.Columns["Precio"].DisplayIndex = 2;
+                        dgvProductos.Columns["Stock"].DisplayIndex = 3;
+                        dgvProductos.Columns["Cantidad"].DisplayIndex = 4;
+                        dgvProductos.Columns["Huevo"].Visible = false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -89,7 +142,6 @@ namespace UI
         {
             inputNombre.Text = "";
             inputPrecio.Text = "";
-            inputProducto.SelectedIndex = -1;
         }
 
         private BEProducto ObtenerProducto()
@@ -99,7 +151,7 @@ namespace UI
                 if (CamposInvalidos())
                 {
                     MostrarMesajeRequerido(true);
-                    throw new Exception("Campos incorrectos.Vuelva a ingresarlos por favor.");
+                    throw new Exception("Campos incorrectos. Vuelva a ingresarlos por favor.");
                 }
 
                 BEProducto producto = null;
@@ -109,7 +161,9 @@ namespace UI
                     producto = new BECeliaco()
                     {
                         Nombre = inputNombre.Text,
-                        Precio = Convert.ToDecimal(inputPrecio.Text)
+                        Precio = Convert.ToDecimal(inputPrecio.Text),
+                        cantidad = (BEProducto.Cantidad)inputCantidad.SelectedItem,
+                        Stock  = Convert.ToInt32(inputStock.Value)
                     };
                 }
                 else if (inputProducto.Text == "Vegano")
@@ -117,7 +171,9 @@ namespace UI
                     producto = new BEVegano()
                     {
                         Nombre = inputNombre.Text,
-                        Precio = Convert.ToDecimal(inputPrecio.Text)
+                        Precio = Convert.ToDecimal(inputPrecio.Text),
+                        cantidad = (BEProducto.Cantidad)inputCantidad.SelectedItem,
+                        Stock = Convert.ToInt32(inputStock.Value)
                     };
                 }
 
@@ -172,9 +228,17 @@ namespace UI
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
-            BEProducto p = (BEProducto)dgvProductos.CurrentRow.DataBoundItem;
-            inputNombre.Text = p.Nombre;
-            inputPrecio.Text = p.Precio.ToString();
+            if (dgvProductos.CurrentRow != null)
+            {
+                BEProducto p = (BEProducto)dgvProductos.CurrentRow.DataBoundItem;
+                inputNombre.Text = p.Nombre;
+                inputPrecio.Text = p.Precio.ToString();
+            } else
+            {
+                inputNombre.Text = "";
+                inputPrecio.Text = "";
+            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -204,6 +268,44 @@ namespace UI
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void radioBtnCeliacos_CheckedChanged(object sender, EventArgs e)
+        {
+            // Se listan todos los productos
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = _bllCeliaco.Listar();
+            // Orden columnas del dgv
+            dgvProductos.Columns["Codigo"].DisplayIndex = 0;
+            dgvProductos.Columns["Nombre"].DisplayIndex = 1;
+            dgvProductos.Columns["Precio"].DisplayIndex = 2;
+            dgvProductos.Columns["Stock"].DisplayIndex = 3;
+            dgvProductos.Columns["Cantidad"].DisplayIndex = 4;
+        }
+
+        private void radioBtnVeganos_CheckedChanged(object sender, EventArgs e)
+        {
+            // Solo los que no contienen huevo
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = _bllVegano.Listar();
+            // Orden columnas del dgv
+            dgvProductos.Columns["Codigo"].DisplayIndex = 0;
+            dgvProductos.Columns["Nombre"].DisplayIndex = 1;
+            dgvProductos.Columns["Precio"].DisplayIndex = 2;
+            dgvProductos.Columns["Stock"].DisplayIndex = 3;
+            dgvProductos.Columns["Cantidad"].DisplayIndex = 4;
+            dgvProductos.Columns["Huevo"].Visible = false;
         }
     }
 }

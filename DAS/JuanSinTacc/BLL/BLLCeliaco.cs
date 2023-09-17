@@ -9,7 +9,7 @@ using MPP;
 
 namespace BLL
 {
-    public class BLLCeliaco : BLLProducto, IGestor<BEProducto>
+    public class BLLCeliaco : BLLProducto, IGestor<BECeliaco>
     {
         private MPPCeliaco _mppCeliaco;
 
@@ -18,24 +18,21 @@ namespace BLL
             _mppCeliaco = new MPPCeliaco();
         }
 
-        public bool Baja(BEProducto ObjBE)
+        public bool Baja(BECeliaco ObjBE)
         {
             throw new NotImplementedException();
         }
 
-        public bool Guardar(BEProducto ObjBE)
+        public bool Guardar(BECeliaco producto)
         {
-            throw new NotImplementedException();
+            return _mppCeliaco.Guardar(producto);
         }
 
-        public List<BEProducto> Listar()
+        public List<BECeliaco> Listar()
         {
             return _mppCeliaco.Listar();
         }
 
-        public BEProducto ListarObjeto(BEProducto ObjBE)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

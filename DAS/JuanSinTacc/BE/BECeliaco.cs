@@ -8,13 +8,8 @@ namespace BE
 {
     public class BECeliaco : BEProducto
     {
-        public string Harina { get; set; }
-
-        public BECeliaco(string harina)
+        public BECeliaco()
         {
-            Harina = harina;
         }
-        public BECeliaco() { }
-        
     }
 }

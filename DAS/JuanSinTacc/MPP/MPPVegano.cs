@@ -22,13 +22,13 @@ namespace MPP
         }
         #endregion
 
-        public List<BEProducto> Listar()
+        public List<BEVegano> Listar()
         {
             try
             {
-                List<BEProducto> lista = new List<BEProducto>();
+                List<BEVegano> lista = new List<BEVegano>();
 
-                string query = $"SELECT p.Codigo, p.Nombre, p.Precio FROM Producto p";
+                string query = $"SELECT p.Codigo, p.Nombre, p.Precio, p.Stock, p.Cantidad FROM Producto p WHERE Huevo = 0";
 
                 DataSet ds = _acceso.Leer(query);
 
@@ -40,6 +40,8 @@ namespace MPP
                         producto.Codigo = Convert.ToInt32(fila["Codigo"]);
                         producto.Nombre = fila["Nombre"].ToString();
                         producto.Precio = Convert.ToDecimal(fila["Precio"]);
+                        producto.Stock = Convert.ToInt32(fila["Stock"]);
+                        producto.cantidad = (BEProducto.Cantidad)fila["Cantidad"];
                         lista.Add(producto);
                     }
                 }
@@ -66,11 +68,11 @@ namespace MPP
             }
         }
 
-        public bool Guardar(BEProducto objBE)
+        public bool Guardar(BEVegano producto)
         {
             try
             {
-                string query = objBE.Codigo == 0 ? NuevoRegistro(objBE) : EditarRegistro(objBE);
+                string query = producto.Codigo == 0 ? NuevoRegistro(producto) : EditarRegistro(producto);
                 return _acceso.ExecuteNonQuery(query);
             }
             catch (Exception ex)
@@ -79,15 +81,16 @@ namespace MPP
             }
         }
 
-        private string EditarRegistro(BEProducto objBE)
+        private string EditarRegistro(BEVegano producto)
         {
-            return $"UPDATE Producto SET Nombre = '{objBE.Nombre}', Precio = {objBE.Precio}" +
-                $"WHERE Codigo = {objBE.Codigo}";
+            return $"UPDATE Producto SET Nombre = '{producto.Nombre}', Precio = {producto.Precio}" +
+                $"WHERE Codigo = {producto.Codigo}";
         }
 
-        private string NuevoRegistro(BEProducto objBE)
+        private string NuevoRegistro(BEVegano producto)
         {
-            return $"INSERT INTO Producto (Nombre, Precio) VALUES('{objBE.Nombre}', {objBE.Precio})";
+            return $"INSERT INTO Producto (Nombre, Precio, Stock, Cantidad, Huevo) " +
+                $"VALUES('{producto.Nombre}', {producto.Precio}, {producto.Stock}, {Convert.ToInt32(producto.cantidad)}, {producto.Huevo})";
         }
     }
 }

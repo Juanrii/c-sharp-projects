@@ -11,9 +11,18 @@ namespace BE
         #region Propiedades
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
+        public int Stock { get; set; }
         private int _cantidad;
+        public enum Cantidad
+        {
+            Unidad,
+            Gramos,
+            Kilogramos
+        }
+        public Cantidad cantidad { get; set; }
+
         #endregion
-               
+
         public void SetCantidad(int cantidad)
         {
             _cantidad = cantidad;

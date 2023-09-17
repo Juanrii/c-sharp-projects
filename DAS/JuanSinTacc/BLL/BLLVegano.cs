@@ -9,31 +9,28 @@ using MPP;
 
 namespace BLL
 {
-    public class BLLVegano : BLLProducto, IGestor<BEProducto>
+    public class BLLVegano : BLLProducto, IGestor<BEVegano>
     {
         private MPPVegano _mppVegano;
         public BLLVegano()
         {
             _mppVegano = new MPPVegano();
         }
-        public bool Baja(BEProducto ObjBE)
+
+        public bool Baja(BEVegano producto)
         {
-            return _mppVegano.Baja(ObjBE);
+            throw new NotImplementedException();
         }
 
-        public bool Guardar(BEProducto ObjBE)
+        public bool Guardar(BEVegano producto)
         {
-            return _mppVegano.Guardar(ObjBE);
+            return _mppVegano.Guardar(producto);
         }
 
-        public List<BEProducto> Listar()
+        public List<BEVegano> Listar()
         {
             return _mppVegano.Listar();
         }
 
-        public BEProducto ListarObjeto(BEProducto ObjBE)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

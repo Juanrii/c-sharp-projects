@@ -8,9 +8,9 @@ namespace BE
 {
     public class BEVegano : BEProducto
     {
-        public bool Huevo { get; set; }
+        public int Huevo { get; set; }
 
-        public BEVegano(bool huevo)
+        public BEVegano(int huevo)
         {
             Huevo = huevo;
         }
