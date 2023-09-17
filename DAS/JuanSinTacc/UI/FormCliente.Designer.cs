@@ -63,7 +63,6 @@ namespace UI
             this.dgvClientes.RowHeadersWidth = 82;
             this.dgvClientes.Size = new System.Drawing.Size(1528, 402);
             this.dgvClientes.TabIndex = 0;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.SelectionChanged += new System.EventHandler(this.dgvClientes_SelectionChanged);
             // 
             // groupBox1

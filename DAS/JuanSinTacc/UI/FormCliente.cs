@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
 using BLL;
@@ -68,8 +61,8 @@ namespace UI
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                MessageBox.Show(ex.Message);
+                return;
             }
         }
 
@@ -85,7 +78,7 @@ namespace UI
                 if (CamposInvalidos())
                 {
                     MostrarMesajeRequerido(true);
-                    throw new Exception("Campos incorrectos.Vuelva a ingresarlos por favor.");
+                    throw new Exception("Campos incorrectos. Vuelva a ingresarlos por favor.");
                 }
                     
                 return new BECliente()
@@ -112,6 +105,9 @@ namespace UI
         {
             try
             {
+                if (dgvClientes.Rows.Count <= 0)
+                    throw new Exception("No existen clientes para modificar.");
+
                 if (CamposInvalidos())
                 {
                     MostrarMesajeRequerido(true);
@@ -136,6 +132,7 @@ namespace UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return;
             }
         }
 
@@ -152,6 +149,9 @@ namespace UI
         {
             try
             {
+                if (dgvClientes.Rows.Count <= 0)
+                    throw new Exception("No existen clientes para eliminar.");
+
                 BECliente cliente = (BECliente)dgvClientes.CurrentRow.DataBoundItem;
 
                 DialogResult res = MessageBox.Show($"Esta seguro que desea eliminar el cliente {cliente.Nombre} {cliente.Apellido}?", "Aviso",
@@ -159,26 +159,20 @@ namespace UI
 
                 if (res == DialogResult.Yes)
                 {
-                    bool baja = _bllCliente.Baja(cliente);
+                    bool eliminado = _bllCliente.Baja(cliente);
                     
-                    if (baja)
+                    if (eliminado)
                     {
                         ActualizarDGV();
                         LimpiarCampos();
                     }
-
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
+                return;
             }
-        }
-
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

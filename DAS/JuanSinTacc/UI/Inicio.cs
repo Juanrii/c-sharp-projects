@@ -17,9 +17,7 @@ namespace UI
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
+        
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
