@@ -108,6 +108,13 @@ namespace UI
                 _total += producto.ObtenerPrecioXCantidad();
 
                 inputTotal.Text = _total.ToString();
+
+                if ((Convert.ToInt32(inputCantidad.Value) == Convert.ToInt32(inputStock.Text)))
+                {
+                    inputProducto.Items.Remove(producto);
+                }
+                inputCantidad.Value = 0;
+                inputStock.Text = "";
             }
             catch (Exception)
             {

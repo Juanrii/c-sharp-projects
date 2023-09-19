@@ -92,7 +92,7 @@ namespace UI
                         // Orden columnas del dgv
                         AplicarConfigColumnas();
                         LimpiarCampos();
-
+                        radioBtnCeliacos.Checked = true;
                     }
                 }
                 else if (inputProducto.Text == "Vegano")
@@ -117,6 +117,7 @@ namespace UI
                         // Orden columnas del dgv
                         AplicarConfigColumnas();
                         dgvProductos.Columns["Huevo"].Visible = false;
+                        radioBtnVeganos.Checked = true;
                     }
                 }
             }
@@ -140,6 +141,8 @@ namespace UI
         {
             inputNombre.Text = "";
             inputPrecio.Text = "";
+            inputStock.Value = 0;
+                
         }
 
         private BEProducto ObtenerProducto()
@@ -234,8 +237,10 @@ namespace UI
                         dgvProductos.DataSource = _bllVegano.Listar();
                         LimpiarCampos();
                         MostrarMesajeRequerido(false);
+                        dgvProductos.Columns["Huevo"].Visible = false;
                     }
                 }
+                AplicarConfigColumnas();
             }
             catch (Exception ex)
             {
@@ -246,18 +251,7 @@ namespace UI
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvProductos.CurrentRow != null)
-            {
-                BEProducto p = (BEProducto)dgvProductos.CurrentRow.DataBoundItem;
-                inputNombre.Text = p.Nombre;
-                inputPrecio.Text = p.Precio.ToString();
-                inputStock.Value = p.Stock;
-                inputCantidad.SelectedItem = p.cantidad;
-            } else
-            {
-                inputNombre.Text = "";
-                inputPrecio.Text = "";
-            }
+            
             
         }
 
@@ -299,8 +293,10 @@ namespace UI
                             dgvProductos.DataSource = _bllVegano.Listar();
                             LimpiarCampos();
                             MostrarMesajeRequerido(false);
+                            dgvProductos.Columns["Huevo"].Visible = false;
                         }
                     }
+                    AplicarConfigColumnas();
                 }
             }
             catch (Exception ex)
@@ -338,6 +334,24 @@ namespace UI
             // Orden columnas del dgv
             AplicarConfigColumnas();
             dgvProductos.Columns["Huevo"].Visible = false;
+        }
+
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProductos.CurrentRow != null)
+            {
+                BEProducto p = (BEProducto)dgvProductos.CurrentRow.DataBoundItem;
+                inputNombre.Text = p.Nombre;
+                inputPrecio.Text = p.Precio.ToString();
+                inputStock.Value = p.Stock;
+                inputCantidad.SelectedItem = p.cantidad;
+            }
+            else
+            {
+                inputNombre.Text = "";
+                inputPrecio.Text = "";
+                inputStock.Value = 0;
+            }
         }
     }
 }

@@ -115,7 +115,7 @@ namespace MPP
 
         private string EditarRegistro(BEVegano producto)
         {
-            return $"UPDATE Producto SET Nombre = '{producto.Nombre}', Precio = {producto.Precio}" +
+            return $"UPDATE Producto SET Nombre = '{producto.Nombre}', Precio = {producto.Precio}, Stock = {producto.Stock}, Cantidad = {Convert.ToInt32(producto.cantidad)}" +
                 $"WHERE Codigo = {producto.Codigo}";
         }
 

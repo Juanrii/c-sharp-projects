@@ -30,7 +30,13 @@ namespace UI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioBtnVeganos = new System.Windows.Forms.RadioButton();
+            this.radioBtnCeliacos = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.inputCantidad = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.inputStock = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             this.inputProducto = new System.Windows.Forms.ComboBox();
             this.campoRequerido2 = new System.Windows.Forms.Label();
             this.campoRequerido1 = new System.Windows.Forms.Label();
@@ -43,16 +49,10 @@ namespace UI
             this.inputPrecio = new System.Windows.Forms.TextBox();
             this.inputNombre = new System.Windows.Forms.TextBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.inputStock = new System.Windows.Forms.NumericUpDown();
-            this.inputCantidad = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.radioBtnCeliacos = new System.Windows.Forms.RadioButton();
-            this.radioBtnVeganos = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -69,6 +69,30 @@ namespace UI
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
+            // 
+            // radioBtnVeganos
+            // 
+            this.radioBtnVeganos.AutoSize = true;
+            this.radioBtnVeganos.Location = new System.Drawing.Point(163, 52);
+            this.radioBtnVeganos.Name = "radioBtnVeganos";
+            this.radioBtnVeganos.Size = new System.Drawing.Size(128, 29);
+            this.radioBtnVeganos.TabIndex = 3;
+            this.radioBtnVeganos.TabStop = true;
+            this.radioBtnVeganos.Text = "Veganos";
+            this.radioBtnVeganos.UseVisualStyleBackColor = true;
+            this.radioBtnVeganos.CheckedChanged += new System.EventHandler(this.radioBtnVeganos_CheckedChanged);
+            // 
+            // radioBtnCeliacos
+            // 
+            this.radioBtnCeliacos.AutoSize = true;
+            this.radioBtnCeliacos.Location = new System.Drawing.Point(12, 52);
+            this.radioBtnCeliacos.Name = "radioBtnCeliacos";
+            this.radioBtnCeliacos.Size = new System.Drawing.Size(126, 29);
+            this.radioBtnCeliacos.TabIndex = 2;
+            this.radioBtnCeliacos.TabStop = true;
+            this.radioBtnCeliacos.Text = "Celiacos";
+            this.radioBtnCeliacos.UseVisualStyleBackColor = true;
+            this.radioBtnCeliacos.CheckedChanged += new System.EventHandler(this.radioBtnCeliacos_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -95,6 +119,42 @@ namespace UI
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gestionar Productos";
+            // 
+            // inputCantidad
+            // 
+            this.inputCantidad.FormattingEnabled = true;
+            this.inputCantidad.Location = new System.Drawing.Point(525, 235);
+            this.inputCantidad.Name = "inputCantidad";
+            this.inputCantidad.Size = new System.Drawing.Size(197, 33);
+            this.inputCantidad.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(407, 238);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 25);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Cantidad:";
+            // 
+            // inputStock
+            // 
+            this.inputStock.Location = new System.Drawing.Point(523, 292);
+            this.inputStock.Name = "inputStock";
+            this.inputStock.Size = new System.Drawing.Size(199, 31);
+            this.inputStock.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(427, 292);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 25);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Stock:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // inputProducto
             // 
@@ -226,67 +286,8 @@ namespace UI
             this.dgvProductos.RowHeadersWidth = 82;
             this.dgvProductos.Size = new System.Drawing.Size(1516, 402);
             this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(427, 292);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 25);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Stock:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // inputStock
-            // 
-            this.inputStock.Location = new System.Drawing.Point(523, 292);
-            this.inputStock.Name = "inputStock";
-            this.inputStock.Size = new System.Drawing.Size(199, 31);
-            this.inputStock.TabIndex = 18;
-            // 
-            // inputCantidad
-            // 
-            this.inputCantidad.FormattingEnabled = true;
-            this.inputCantidad.Location = new System.Drawing.Point(525, 235);
-            this.inputCantidad.Name = "inputCantidad";
-            this.inputCantidad.Size = new System.Drawing.Size(197, 33);
-            this.inputCantidad.TabIndex = 20;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(407, 238);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 25);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Cantidad:";
-            // 
-            // radioBtnCeliacos
-            // 
-            this.radioBtnCeliacos.AutoSize = true;
-            this.radioBtnCeliacos.Location = new System.Drawing.Point(12, 52);
-            this.radioBtnCeliacos.Name = "radioBtnCeliacos";
-            this.radioBtnCeliacos.Size = new System.Drawing.Size(126, 29);
-            this.radioBtnCeliacos.TabIndex = 2;
-            this.radioBtnCeliacos.TabStop = true;
-            this.radioBtnCeliacos.Text = "Celiacos";
-            this.radioBtnCeliacos.UseVisualStyleBackColor = true;
-            this.radioBtnCeliacos.CheckedChanged += new System.EventHandler(this.radioBtnCeliacos_CheckedChanged);
-            // 
-            // radioBtnVeganos
-            // 
-            this.radioBtnVeganos.AutoSize = true;
-            this.radioBtnVeganos.Location = new System.Drawing.Point(163, 52);
-            this.radioBtnVeganos.Name = "radioBtnVeganos";
-            this.radioBtnVeganos.Size = new System.Drawing.Size(128, 29);
-            this.radioBtnVeganos.TabIndex = 3;
-            this.radioBtnVeganos.TabStop = true;
-            this.radioBtnVeganos.Text = "Veganos";
-            this.radioBtnVeganos.UseVisualStyleBackColor = true;
-            this.radioBtnVeganos.CheckedChanged += new System.EventHandler(this.radioBtnVeganos_CheckedChanged);
             // 
             // FormProducto
             // 
@@ -301,8 +302,8 @@ namespace UI
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
