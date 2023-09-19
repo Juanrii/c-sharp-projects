@@ -37,5 +37,14 @@ namespace BLL
         {
             return _mppCeliaco.ObtenerStocks(producto);
         }
+
+        
+
+        public List<BEProducto> ListarTodo()
+        {
+            return _mppCeliaco.ListarTodo();
+        }
+
+        
     }
 }

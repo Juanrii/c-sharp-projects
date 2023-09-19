@@ -56,6 +56,52 @@ namespace MPP
 
         }
 
+        public List<BEProducto> ListarTodo()
+        {
+            try
+            {
+                List<BEProducto> lista = new List<BEProducto>();
+
+                string query = $"SELECT p.Codigo, p.Nombre, p.Precio, p.Stock, p.Cantidad, p.Huevo AS EsCeliaco FROM Producto p";
+
+                DataTable table = _acceso.Leer(query);
+
+                if (table.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in table.Rows)
+                    {
+                        if (Convert.ToInt32(fila["EsCeliaco"]) == 1)
+                        {
+                            BECeliaco producto = new BECeliaco();
+                            producto.Codigo = Convert.ToInt32(fila["Codigo"]);
+                            producto.Nombre = fila["Nombre"].ToString();
+                            producto.Precio = Convert.ToDecimal(fila["Precio"]);
+                            producto.Stock = Convert.ToInt32(fila["Stock"]);
+                            producto.cantidad = (BEProducto.Cantidad)fila["Cantidad"];
+                            lista.Add(producto);
+                        }
+                        else
+                        {
+                            BEVegano producto = new BEVegano();
+                            producto.Codigo = Convert.ToInt32(fila["Codigo"]);
+                            producto.Nombre = fila["Nombre"].ToString();
+                            producto.Precio = Convert.ToDecimal(fila["Precio"]);
+                            producto.Stock = Convert.ToInt32(fila["Stock"]);
+                            producto.cantidad = (BEProducto.Cantidad)fila["Cantidad"];
+                            producto.Huevo = 0;
+                            lista.Add(producto);
+                        }
+                    }
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<BECeliaco> ObtenerStocks(BECeliaco producto)
         {
             try

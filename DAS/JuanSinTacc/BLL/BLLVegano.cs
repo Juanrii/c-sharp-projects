@@ -36,5 +36,7 @@ namespace BLL
         {
             return _mppVegano.ObtenerStocks(producto);
         }
+
+       
     }
 }

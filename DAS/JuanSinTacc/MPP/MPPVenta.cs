@@ -98,7 +98,7 @@ namespace MPP
                         {
                             BECeliaco p = new BECeliaco();
                             p.Nombre = fila["NombreProducto"].ToString();
-                            p.SetCantidad(Convert.ToInt32(fila["TotalVendido"]));
+                            p.CantidadUni = (Convert.ToInt32(fila["TotalVendido"]));
                             lista.Add(p);
 
                         }
@@ -106,7 +106,7 @@ namespace MPP
                         {
                             BEVegano p = new BEVegano();
                             p.Nombre = fila["NombreProducto"].ToString();
-                            p.SetCantidad(Convert.ToInt32(fila["TotalVendido"]));
+                            p.CantidadUni = (Convert.ToInt32(fila["TotalVendido"]));
                             p.Huevo = 0;
                             lista.Add(p);
                         }
@@ -152,7 +152,7 @@ namespace MPP
                                     p.Codigo = Convert.ToInt32(f["Codigo"]);
                                     p.Nombre = Convert.ToString(f["Nombre"]);
                                     p.Precio = Convert.ToDecimal(f["Precio"]);
-                                    p.SetCantidad(Convert.ToInt32(f["CantProducto"]));
+                                    p.CantidadUni = (Convert.ToInt32(f["CantProducto"]));
                                     productos.Add(p);
                                 }
                                 else
@@ -161,7 +161,7 @@ namespace MPP
                                     p.Codigo = Convert.ToInt32(f["Codigo"]);
                                     p.Nombre = Convert.ToString(f["Nombre"]);
                                     p.Precio = Convert.ToDecimal(f["Precio"]);
-                                    p.SetCantidad(Convert.ToInt32(f["CantProducto"]));
+                                    p.CantidadUni = (Convert.ToInt32(f["CantProducto"]));
                                     p.Huevo = 0;
                                     productos.Add(p);
                                 }
@@ -249,7 +249,7 @@ namespace MPP
         {
             try
             {
-                string query = $"UPDATE Producto SET Stock = Stock - {producto.ObtenerCantidad()} WHERE Codigo = {producto.Codigo}";
+                string query = $"UPDATE Producto SET Stock = Stock - {producto.CantidadUni} WHERE Codigo = {producto.Codigo}";
                 _acceso.ExecuteNonQuery(query);
             }
             catch (Exception)
@@ -263,7 +263,7 @@ namespace MPP
             try
             {
                 string query = $"INSERT INTO DetalleVenta (Venta, Producto, CantProducto, PrecioUnitario, Subtotal) " +
-                    $"VALUES ({ventaCodigo}, {producto.Codigo}, {producto.ObtenerCantidad()}, {producto.Precio}, {producto.ObtenerPrecioXCantidad()})";
+                    $"VALUES ({ventaCodigo}, {producto.Codigo}, {producto.CantidadUni}, {producto.Precio}, {producto.ObtenerPrecioXCantidad()})";
                 _acceso.ExecuteNonQuery(query);
             }
             catch (Exception ex)

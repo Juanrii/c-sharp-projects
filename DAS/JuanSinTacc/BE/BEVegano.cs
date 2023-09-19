@@ -16,5 +16,11 @@ namespace BE
         }
         public BEVegano() { }
 
+        public override decimal ObtenerPrecioXCantidad()
+        {
+            decimal precio = CantidadUni * Precio;
+            decimal descuento = precio * 0.10m;
+            return precio - descuento;
+        }
     }
 }

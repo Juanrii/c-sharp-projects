@@ -12,5 +12,9 @@ namespace BE
         {
         }
 
+        public override decimal ObtenerPrecioXCantidad()
+        {
+            return CantidadUni * Precio;
+        }
     }
 }

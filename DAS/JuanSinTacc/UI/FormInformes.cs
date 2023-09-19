@@ -81,7 +81,7 @@ namespace UI
             dgvProductos.Rows.Clear();
             foreach (BEProducto p in venta.ListaProductos)
             {
-                dgvProductos.Rows.Add(p.Nombre, p.ObtenerCantidad(), p.Precio, p.ObtenerPrecioXCantidad());
+                dgvProductos.Rows.Add(p.Nombre, p.CantidadUni, p.Precio, p.ObtenerPrecioXCantidad());
             }
             labelTotal.Text = "Total: $" + venta.Monto.ToString();
         }
@@ -104,7 +104,7 @@ namespace UI
             dgvMasVendidos.Rows.Clear();
             foreach (BEProducto p in _bllVenta.ListarMasVendidos())
             {
-                dgvMasVendidos.Rows.Add(p.Nombre, p.ObtenerCantidad());
+                dgvMasVendidos.Rows.Add(p.Nombre, p.CantidadUni);
             }
         }
 

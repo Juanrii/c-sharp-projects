@@ -17,6 +17,7 @@ namespace UI
         private BLLVenta _bllVenta;
         private BLLCliente _bllCliente;
         private BLLCeliaco _bllCeliaco;
+        private BLLVegano _bllVegano;
         private List<BEProducto> _listaProd;
         private decimal _total = 0;
 
@@ -28,6 +29,7 @@ namespace UI
             _bllVenta = new BLLVenta();
             _bllCliente = new BLLCliente();
             _bllCeliaco = new BLLCeliaco();
+            _bllVegano = new BLLVegano();
             _listaProd = new List<BEProducto>();
             _venta = new BEVenta();
 
@@ -52,7 +54,7 @@ namespace UI
             inputProducto.Items.Clear();
             inputProducto.DisplayMember = "Nombre";
             inputProducto.ValueMember = "Codigo";
-            foreach (BECeliaco p in _bllCeliaco.Listar())
+            foreach (BEProducto p in _bllCeliaco.ListarTodo())
                 inputProducto.Items.Add(p);
         }
 
@@ -92,7 +94,7 @@ namespace UI
             try
             {
                 BEProducto producto = (BEProducto)inputProducto.SelectedItem;
-                producto.SetCantidad(Convert.ToInt32(inputCantidad.Value));
+                producto.CantidadUni = (Convert.ToInt32(inputCantidad.Value));
 
                 BECliente cliente = (BECliente)inputCliente.SelectedItem;
                 
@@ -101,7 +103,7 @@ namespace UI
 
                 inputCliente.Enabled = false;
 
-                dgvVentaProducto.Rows.Add(producto.Nombre, producto.ObtenerCantidad(), producto.Precio, producto.ObtenerPrecioXCantidad());
+                dgvVentaProducto.Rows.Add(producto.Nombre, producto.CantidadUni, producto.Precio, producto.ObtenerPrecioXCantidad());
 
                 _total += producto.ObtenerPrecioXCantidad();
 
