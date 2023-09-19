@@ -29,18 +29,20 @@ namespace MPP
             {
                 List<BECeliaco> lista = new List<BECeliaco>();
 
-                string query = $"SELECT p.Codigo, p.Nombre, p.Precio FROM Producto p";
+                string query = $"SELECT p.Codigo, p.Nombre, p.Precio, p.Stock, p.Cantidad FROM Producto p";
 
-                DataSet ds = _acceso.Leer(query);
+                DataTable table = _acceso.Leer(query);
 
-                if (ds.Tables[0].Rows.Count > 0)
+                if (table.Rows.Count > 0)
                 {
-                    foreach (DataRow fila in ds.Tables[0].Rows)
+                    foreach (DataRow fila in table.Rows)
                     {
                         BECeliaco producto = new BECeliaco();
                         producto.Codigo = Convert.ToInt32(fila["Codigo"]);
                         producto.Nombre = fila["Nombre"].ToString();
                         producto.Precio = Convert.ToDecimal(fila["Precio"]);
+                        producto.Stock = Convert.ToInt32(fila["Stock"]);
+                        producto.cantidad = (BEProducto.Cantidad)fila["Cantidad"];
                         lista.Add(producto);
                     }
                 }
@@ -54,11 +56,42 @@ namespace MPP
 
         }
 
-        public bool Baja(BEProducto objBE)
+        public List<BECeliaco> ObtenerStocks(BECeliaco producto)
         {
             try
             {
-                string query = $"DELETE FROM Producto WHERE Codigo = {objBE.Codigo}";
+                List<BECeliaco> lista = new List<BECeliaco>();
+
+                string query = $"SELECT p.Codigo, p.Nombre, p.Stock, p.Cantidad FROM Producto p WHERE Stock <= {producto.Stock} AND p.Huevo = 1 AND p.Cantidad = {Convert.ToInt32(producto.cantidad)}";
+
+                DataTable table = _acceso.Leer(query);
+
+                if (table.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in table.Rows)
+                    {
+                        BECeliaco p = new BECeliaco();
+                        p.Codigo = Convert.ToInt32(fila["Codigo"]);
+                        p.Nombre = fila["Nombre"].ToString();
+                        p.Stock = Convert.ToInt32(fila["Stock"]);
+                        p.cantidad = (BEProducto.Cantidad)fila["Cantidad"];
+                        lista.Add(p);
+                    }
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Baja(BEProducto producto)
+        {
+            try
+            {
+                string query = $"DELETE FROM Producto WHERE Codigo = {producto.Codigo}";
                 return _acceso.ExecuteNonQuery(query);
             }
             catch (Exception ex)
@@ -80,7 +113,7 @@ namespace MPP
             }
         }
 
-        private string EditarRegistro(BEProducto producto)
+        private string EditarRegistro(BECeliaco producto)
         {
             return $"UPDATE Producto SET Nombre = '{producto.Nombre}', Precio = {producto.Precio}, Stock = {producto.Stock}, Cantidad = {Convert.ToInt32(producto.cantidad)}" +
                 $"WHERE Codigo = {producto.Codigo}";

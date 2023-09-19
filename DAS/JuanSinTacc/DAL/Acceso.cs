@@ -17,14 +17,14 @@ namespace DAL
 
         private SqlTransaction _tx;
 
-        public DataSet Leer(string query)
+        public DataTable Leer(string query)
         {
-            DataSet dataSet = new DataSet();
+            DataTable table = new DataTable();
 
             try
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
-                adapter.Fill(dataSet);
+                adapter.Fill(table);
             }
             catch (SqlException ex)
             {
@@ -39,7 +39,7 @@ namespace DAL
                 _connection.Close();
             }
 
-            return dataSet;
+            return table;
         }
 
         public bool ExecuteNonQuery(string query)

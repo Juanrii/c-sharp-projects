@@ -30,12 +30,27 @@ namespace BLL
 
         public List<BEVenta> Listar()
         {
-            throw new NotImplementedException();
+            return _mppVenta.Listar();
         }
 
-        public BEVenta ListarObjeto(BEVenta ObjBE)
+        public List<BEVenta> ListarPorCliente(BECliente cliente)
         {
-            throw new NotImplementedException();
+            return _mppVenta.ListarPorCliente(cliente);
+        }
+
+        public List<BEProducto> ListarMasVendidos()
+        {
+            return _mppVenta.ListarMasVendidos();
+        }
+
+        public decimal ObtenerVentaTotal()
+        {
+            return _mppVenta.ObtenerVentaTotal();
+        }
+
+        public int ObtenerVentasRealizadas()
+        {
+            return _mppVenta.ObtenerVentasRealizadas();
         }
     }
 }

@@ -13,6 +13,8 @@ namespace BE
         public decimal Precio { get; set; }
         public int Stock { get; set; }
         private int _cantidad;
+        public int DetalleCantidad;
+
         public enum Cantidad
         {
             Unidad,
@@ -37,6 +39,5 @@ namespace BE
         {
             return _cantidad * Precio;
         }
-        
     }
 }

@@ -30,29 +30,31 @@ namespace UI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.inputCliente = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.inputProducto = new System.Windows.Forms.ComboBox();
-            this.inputCantidad = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dgvVentaProducto = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.inputTotal = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGenerarVenta = new System.Windows.Forms.Button();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.inputPrecio = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.inputTotal = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dgvVentaProducto = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.inputPrecio = new System.Windows.Forms.TextBox();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.inputCantidad = new System.Windows.Forms.NumericUpDown();
+            this.inputProducto = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.inputCliente = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.inputStock = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentaProducto)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVentaProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,18 +68,15 @@ namespace UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestionar Venta";
             // 
-            // groupBox2
+            // label2
             // 
-            this.groupBox2.Controls.Add(this.btnGenerarVenta);
-            this.groupBox2.Controls.Add(this.btnCancelar);
-            this.groupBox2.Controls.Add(this.inputTotal);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dgvVentaProducto);
-            this.groupBox2.Location = new System.Drawing.Point(12, 315);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1421, 527);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(521, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(419, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Productos 100% libre de gluten";
             // 
             // label1
             // 
@@ -89,83 +88,59 @@ namespace UI
             this.label1.TabIndex = 0;
             this.label1.Text = "JuanSinTacc - Ventas";
             // 
-            // label2
+            // groupBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(521, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(419, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Productos 100% libre de gluten";
+            this.groupBox2.Controls.Add(this.btnGenerarVenta);
+            this.groupBox2.Controls.Add(this.btnCancelar);
+            this.groupBox2.Controls.Add(this.inputTotal);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.dgvVentaProducto);
+            this.groupBox2.Location = new System.Drawing.Point(12, 383);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1421, 450);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
             // 
-            // groupBox3
+            // btnGenerarVenta
             // 
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.inputPrecio);
-            this.groupBox3.Controls.Add(this.btnAgregarProducto);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.inputCantidad);
-            this.groupBox3.Controls.Add(this.inputProducto);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.inputCliente);
-            this.groupBox3.Location = new System.Drawing.Point(12, 197);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1421, 112);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
+            this.btnGenerarVenta.BackColor = System.Drawing.Color.LightGreen;
+            this.btnGenerarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarVenta.Location = new System.Drawing.Point(491, 345);
+            this.btnGenerarVenta.Name = "btnGenerarVenta";
+            this.btnGenerarVenta.Size = new System.Drawing.Size(542, 85);
+            this.btnGenerarVenta.TabIndex = 9;
+            this.btnGenerarVenta.Text = "Generar Venta";
+            this.btnGenerarVenta.UseVisualStyleBackColor = false;
+            this.btnGenerarVenta.Click += new System.EventHandler(this.btnGenerarVenta_Click);
             // 
-            // inputCliente
+            // btnCancelar
             // 
-            this.inputCliente.FormattingEnabled = true;
-            this.inputCliente.Location = new System.Drawing.Point(99, 30);
-            this.inputCliente.Name = "inputCliente";
-            this.inputCliente.Size = new System.Drawing.Size(225, 33);
-            this.inputCliente.TabIndex = 0;
+            this.btnCancelar.BackColor = System.Drawing.Color.Tomato;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(6, 345);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(479, 85);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // inputTotal
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Cliente:";
+            this.inputTotal.Enabled = false;
+            this.inputTotal.Location = new System.Drawing.Point(1200, 375);
+            this.inputTotal.Name = "inputTotal";
+            this.inputTotal.Size = new System.Drawing.Size(215, 31);
+            this.inputTotal.TabIndex = 7;
             // 
-            // label4
+            // label6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(381, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Producto:";
-            // 
-            // inputProducto
-            // 
-            this.inputProducto.FormattingEnabled = true;
-            this.inputProducto.Location = new System.Drawing.Point(491, 33);
-            this.inputProducto.Name = "inputProducto";
-            this.inputProducto.Size = new System.Drawing.Size(225, 33);
-            this.inputProducto.TabIndex = 3;
-            this.inputProducto.SelectedIndexChanged += new System.EventHandler(this.inputProducto_SelectedIndexChanged);
-            // 
-            // inputCantidad
-            // 
-            this.inputCantidad.Location = new System.Drawing.Point(992, 33);
-            this.inputCantidad.Name = "inputCantidad";
-            this.inputCantidad.Size = new System.Drawing.Size(171, 31);
-            this.inputCantidad.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(780, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(196, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Cantidad Producto:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1039, 368);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(155, 42);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "TOTAL:";
             // 
             // dgvVentaProducto
             // 
@@ -178,49 +153,44 @@ namespace UI
             this.dgvVentaProducto.ReadOnly = true;
             this.dgvVentaProducto.RowHeadersWidth = 82;
             this.dgvVentaProducto.RowTemplate.Height = 33;
-            this.dgvVentaProducto.Size = new System.Drawing.Size(1409, 400);
+            this.dgvVentaProducto.Size = new System.Drawing.Size(1409, 311);
             this.dgvVentaProducto.TabIndex = 0;
             // 
-            // label6
+            // groupBox3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1039, 459);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 42);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "TOTAL:";
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.inputStock);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.inputPrecio);
+            this.groupBox3.Controls.Add(this.btnAgregarProducto);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.inputCantidad);
+            this.groupBox3.Controls.Add(this.inputProducto);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.inputCliente);
+            this.groupBox3.Location = new System.Drawing.Point(12, 197);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1421, 154);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
             // 
-            // inputTotal
+            // label7
             // 
-            this.inputTotal.Enabled = false;
-            this.inputTotal.Location = new System.Drawing.Point(1200, 466);
-            this.inputTotal.Name = "inputTotal";
-            this.inputTotal.Size = new System.Drawing.Size(215, 31);
-            this.inputTotal.TabIndex = 7;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(817, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(159, 25);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Precio Unitario:";
             // 
-            // btnCancelar
+            // inputPrecio
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Tomato;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(6, 436);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(479, 85);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // btnGenerarVenta
-            // 
-            this.btnGenerarVenta.BackColor = System.Drawing.Color.LightGreen;
-            this.btnGenerarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarVenta.Location = new System.Drawing.Point(491, 436);
-            this.btnGenerarVenta.Name = "btnGenerarVenta";
-            this.btnGenerarVenta.Size = new System.Drawing.Size(542, 85);
-            this.btnGenerarVenta.TabIndex = 9;
-            this.btnGenerarVenta.Text = "Generar Venta";
-            this.btnGenerarVenta.UseVisualStyleBackColor = false;
-            this.btnGenerarVenta.Click += new System.EventHandler(this.btnGenerarVenta_Click);
+            this.inputPrecio.Enabled = false;
+            this.inputPrecio.Location = new System.Drawing.Point(992, 70);
+            this.inputPrecio.Name = "inputPrecio";
+            this.inputPrecio.Size = new System.Drawing.Size(171, 31);
+            this.inputPrecio.TabIndex = 10;
             // 
             // btnAgregarProducto
             // 
@@ -234,22 +204,74 @@ namespace UI
             this.btnAgregarProducto.UseVisualStyleBackColor = false;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
-            // inputPrecio
+            // label5
             // 
-            this.inputPrecio.Enabled = false;
-            this.inputPrecio.Location = new System.Drawing.Point(992, 70);
-            this.inputPrecio.Name = "inputPrecio";
-            this.inputPrecio.Size = new System.Drawing.Size(171, 31);
-            this.inputPrecio.TabIndex = 10;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(780, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(196, 25);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Cantidad Producto:";
             // 
-            // label7
+            // inputCantidad
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(806, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 25);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Precio Unitario:";
+            this.inputCantidad.Location = new System.Drawing.Point(992, 33);
+            this.inputCantidad.Name = "inputCantidad";
+            this.inputCantidad.Size = new System.Drawing.Size(171, 31);
+            this.inputCantidad.TabIndex = 4;
+            this.inputCantidad.ValueChanged += new System.EventHandler(this.inputCantidad_ValueChanged);
+            // 
+            // inputProducto
+            // 
+            this.inputProducto.FormattingEnabled = true;
+            this.inputProducto.Location = new System.Drawing.Point(491, 33);
+            this.inputProducto.Name = "inputProducto";
+            this.inputProducto.Size = new System.Drawing.Size(225, 33);
+            this.inputProducto.TabIndex = 3;
+            this.inputProducto.SelectedIndexChanged += new System.EventHandler(this.inputProducto_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(381, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Producto:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Cliente:";
+            // 
+            // inputCliente
+            // 
+            this.inputCliente.FormattingEnabled = true;
+            this.inputCliente.Location = new System.Drawing.Point(99, 30);
+            this.inputCliente.Name = "inputCliente";
+            this.inputCliente.Size = new System.Drawing.Size(225, 33);
+            this.inputCliente.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(812, 107);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(164, 25);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Stock Producto:";
+            // 
+            // inputStock
+            // 
+            this.inputStock.Enabled = false;
+            this.inputStock.Location = new System.Drawing.Point(992, 107);
+            this.inputStock.Name = "inputStock";
+            this.inputStock.Size = new System.Drawing.Size(171, 31);
+            this.inputStock.TabIndex = 12;
             // 
             // FormVenta
             // 
@@ -265,10 +287,10 @@ namespace UI
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentaProducto)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVentaProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,5 +316,7 @@ namespace UI
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox inputPrecio;
         private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox inputStock;
     }
 }

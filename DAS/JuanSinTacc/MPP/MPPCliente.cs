@@ -31,11 +31,11 @@ namespace MPP
 
                 string query = "SELECT Codigo, Nombre, Apellido, Telefono, Direccion FROM Cliente";
 
-                DataSet ds = _acceso.Leer(query);
+                DataTable table = _acceso.Leer(query);
 
-                if (ds.Tables[0].Rows.Count > 0)
+                if (table.Rows.Count > 0)
                 {
-                    foreach (DataRow fila in ds.Tables[0].Rows)
+                    foreach (DataRow fila in table.Rows)
                     {
                         BECliente cliente = LlenarCliente(fila);
                         lista.Add(cliente);

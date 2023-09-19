@@ -19,7 +19,7 @@ namespace BLL
 
         public bool Baja(BEVegano producto)
         {
-            throw new NotImplementedException();
+            return _mppVegano.Baja(producto);
         }
 
         public bool Guardar(BEVegano producto)
@@ -32,5 +32,9 @@ namespace BLL
             return _mppVegano.Listar();
         }
 
+        public List<BEVegano> ObtenerStocks(BEVegano producto)
+        {
+            return _mppVegano.ObtenerStocks(producto);
+        }
     }
 }

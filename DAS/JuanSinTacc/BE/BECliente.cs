@@ -26,5 +26,10 @@ namespace BE
 
         public BECliente() { }
         #endregion
+
+        public override string ToString()
+        {
+            return $"{Nombre} - {Apellido}";
+        }
     }
 }

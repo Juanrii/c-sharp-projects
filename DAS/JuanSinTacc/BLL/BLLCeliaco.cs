@@ -18,9 +18,9 @@ namespace BLL
             _mppCeliaco = new MPPCeliaco();
         }
 
-        public bool Baja(BECeliaco ObjBE)
+        public bool Baja(BECeliaco producto)
         {
-            throw new NotImplementedException();
+            return _mppCeliaco.Baja(producto);
         }
 
         public bool Guardar(BECeliaco producto)
@@ -33,6 +33,9 @@ namespace BLL
             return _mppCeliaco.Listar();
         }
 
-        
+        public List<BECeliaco> ObtenerStocks(BECeliaco producto)
+        {
+            return _mppCeliaco.ObtenerStocks(producto);
+        }
     }
 }

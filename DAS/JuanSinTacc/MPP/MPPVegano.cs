@@ -30,11 +30,11 @@ namespace MPP
 
                 string query = $"SELECT p.Codigo, p.Nombre, p.Precio, p.Stock, p.Cantidad FROM Producto p WHERE Huevo = 0";
 
-                DataSet ds = _acceso.Leer(query);
+                DataTable table = _acceso.Leer(query);
 
-                if (ds.Tables[0].Rows.Count > 0)
+                if (table.Rows.Count > 0)
                 {
-                    foreach (DataRow fila in ds.Tables[0].Rows)
+                    foreach (DataRow fila in table.Rows)
                     {
                         BEVegano producto = new BEVegano();
                         producto.Codigo = Convert.ToInt32(fila["Codigo"]);
@@ -55,11 +55,43 @@ namespace MPP
 
         }
 
-        public bool Baja(BEProducto objBE)
+        public List<BEVegano> ObtenerStocks(BEVegano producto)
         {
             try
             {
-                string query = $"DELETE FROM Producto WHERE Codigo = {objBE.Codigo}";
+                List<BEVegano> lista = new List<BEVegano>();
+
+                string query = $"SELECT p.Codigo, p.Nombre, p.Stock, p.Cantidad FROM Producto p WHERE Stock <= {producto.Stock} AND p.Huevo = 0 AND p.Cantidad = {Convert.ToInt32(producto.cantidad)}";
+
+                DataTable table = _acceso.Leer(query);
+
+                if (table.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in table.Rows)
+                    {
+                        BEVegano p = new BEVegano();
+                        p.Codigo = Convert.ToInt32(fila["Codigo"]);
+                        p.Nombre = fila["Nombre"].ToString();
+                        p.Stock = Convert.ToInt32(fila["Stock"]);
+                        p.cantidad = (BEProducto.Cantidad)fila["Cantidad"];
+                        p.Huevo = 0;
+                        lista.Add(p);
+                    }
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Baja(BEVegano producto)
+        {
+            try
+            {
+                string query = $"DELETE FROM Producto WHERE Codigo = {producto.Codigo}";
                 return _acceso.ExecuteNonQuery(query);
             }
             catch (Exception ex)

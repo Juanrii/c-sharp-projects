@@ -16,7 +16,7 @@ namespace UI
     {
         private BLLVenta _bllVenta;
         private BLLCliente _bllCliente;
-        private BLLProducto _bllProducto;
+        private BLLCeliaco _bllCeliaco;
         private List<BEProducto> _listaProd;
         private decimal _total = 0;
 
@@ -27,7 +27,7 @@ namespace UI
             InitializeComponent();
             _bllVenta = new BLLVenta();
             _bllCliente = new BLLCliente();
-            //_bllProducto = new BLLProducto();
+            _bllCeliaco = new BLLCeliaco();
             _listaProd = new List<BEProducto>();
             _venta = new BEVenta();
 
@@ -37,11 +37,7 @@ namespace UI
             foreach (BECliente c in _bllCliente.Listar())
                 inputCliente.Items.Add(c);
 
-            inputProducto.Items.Clear();
-            inputProducto.DisplayMember = "Nombre";
-            inputProducto.ValueMember = "Codigo";
-            //foreach (BEProducto p in _bllProducto.Listar())
-            //    inputProducto.Items.Add(p);
+            ObtenerProductos();
 
 
             dgvVentaProducto.Columns.Add("Producto", "Producto");
@@ -51,16 +47,38 @@ namespace UI
 
         }
 
+        private void ObtenerProductos()
+        {
+            inputProducto.Items.Clear();
+            inputProducto.DisplayMember = "Nombre";
+            inputProducto.ValueMember = "Codigo";
+            foreach (BECeliaco p in _bllCeliaco.Listar())
+                inputProducto.Items.Add(p);
+        }
+
         private void btnGenerarVenta_Click(object sender, EventArgs e)
         {
             try
             {
-                _bllVenta.Guardar(_venta);
+                DialogResult res = MessageBox.Show("Desea confirmar la venta?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                inputCliente.Enabled = true;
-                inputTotal.Text = "";
-                _total = 0;
-                dgvVentaProducto.Rows.Clear();
+                if (res == DialogResult.Yes)
+                {
+                    _venta.Monto = _total;
+                    bool guardado = _bllVenta.Guardar(_venta);
+
+                    if (guardado)
+                    {
+                        inputCliente.Enabled = true;
+                        inputTotal.Text = "";
+                        inputPrecio.Text = "";
+                        inputStock.Text = "";
+                        _total = 0;
+                        dgvVentaProducto.Rows.Clear();
+                        ObtenerProductos();
+                    }
+                }
+                
             }
             catch (Exception)
             {
@@ -102,10 +120,24 @@ namespace UI
             {
                 BEProducto p = (BEProducto)inputProducto.SelectedItem;
                 inputPrecio.Text = Convert.ToString(p.Precio);
+                inputStock.Text = Convert.ToString(p.Stock);
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        private void inputCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            if (inputStock.Text != "")
+            {
+                int stock = Convert.ToInt32(inputStock.Text);
+                if ((int)inputCantidad.Value > stock)
+                {
+                    MessageBox.Show("No hay stock suficiente.", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    inputCantidad.Value = stock;
+                }
             }
         }
     }

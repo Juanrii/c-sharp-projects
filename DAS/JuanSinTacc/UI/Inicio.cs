@@ -47,5 +47,12 @@ namespace UI
             formVenta.MdiParent = this;
             formVenta.Show();
         }
+
+        private void informesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormInformes formInformes = new FormInformes();
+            formInformes.MdiParent = this;
+            formInformes.Show();
+        }
     }
 }
