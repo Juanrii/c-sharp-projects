@@ -1,0 +1,139 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Auto">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="AuPatente" type="xs:string" />
+                <xs:element name="AuAnio" type="xs:int" minOccurs="0" />
+                <xs:element name="AuEnUso" type="xs:boolean" minOccurs="0" />
+                <xs:element name="AuValor" type="xs:decimal" minOccurs="0" />
+                <xs:element name="AuFechaIngreso" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="AuFechaBaja" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//Auto" />
+        <xs:field xpath="AuPatente" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <Auto>
+    <AuPatente>AG234ASD</AuPatente>
+    <AuAnio>2021</AuAnio>
+    <AuEnUso>false</AuEnUso>
+    <AuValor>123123</AuValor>
+    <AuFechaIngreso>2022-10-10T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2023-12-22T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>AG555DFD</AuPatente>
+    <AuAnio>2019</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>8000</AuValor>
+    <AuFechaIngreso>2023-10-10T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>AG902ZHG</AuPatente>
+    <AuAnio>2016</AuAnio>
+    <AuEnUso>false</AuEnUso>
+    <AuValor>18299</AuValor>
+    <AuFechaIngreso>2016-05-12T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2017-06-12T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>LN107QIG</AuPatente>
+    <AuAnio>2015</AuAnio>
+    <AuEnUso>false</AuEnUso>
+    <AuValor>11254</AuValor>
+    <AuFechaIngreso>2015-06-08T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2017-04-14T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>BO827MUL</AuPatente>
+    <AuAnio>2017</AuAnio>
+    <AuEnUso>false</AuEnUso>
+    <AuValor>7209</AuValor>
+    <AuFechaIngreso>2017-08-15T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2020-02-26T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>ED884XPI</AuPatente>
+    <AuAnio>2020</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>7912</AuValor>
+    <AuFechaIngreso>2020-05-12T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>WL010JCY</AuPatente>
+    <AuAnio>2020</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>15987</AuValor>
+    <AuFechaIngreso>2020-02-11T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>UV752WJM</AuPatente>
+    <AuAnio>2018</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>10778</AuValor>
+    <AuFechaIngreso>2018-07-16T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>IC092BQK</AuPatente>
+    <AuAnio>2020</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>9277</AuValor>
+    <AuFechaIngreso>2020-10-16T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>UV969BHP</AuPatente>
+    <AuAnio>2015</AuAnio>
+    <AuEnUso>false</AuEnUso>
+    <AuValor>17804</AuValor>
+    <AuFechaIngreso>2015-08-12T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2017-04-03T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>XX123VCV</AuPatente>
+    <AuAnio>2017</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>9000</AuValor>
+    <AuFechaIngreso>2019-10-20T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>GH564GHG</AuPatente>
+    <AuAnio>2015</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>9500</AuValor>
+    <AuFechaIngreso>2020-10-10T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>AG000SDS</AuPatente>
+    <AuAnio>2020</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>6700</AuValor>
+    <AuFechaIngreso>2021-05-20T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+  <Auto>
+    <AuPatente>GH123ABC</AuPatente>
+    <AuAnio>2019</AuAnio>
+    <AuEnUso>true</AuEnUso>
+    <AuValor>8950</AuValor>
+    <AuFechaIngreso>2021-07-19T00:00:00-03:00</AuFechaIngreso>
+    <AuFechaBaja>2999-01-01T00:00:00-03:00</AuFechaBaja>
+  </Auto>
+</NewDataSet>
