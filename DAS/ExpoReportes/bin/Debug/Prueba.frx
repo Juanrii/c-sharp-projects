@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" TextQuality="Regular" ReportInfo.Created="03/13/2024 21:54:24" ReportInfo.Modified="03/13/2024 22:22:08" ReportInfo.CreatorVersion="2024.1.8.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <TextObject Name="Text1" Width="200" Height="56.7" CanGrow="true" Text="Esto es una prueba" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+  </ReportPage>
+</Report>

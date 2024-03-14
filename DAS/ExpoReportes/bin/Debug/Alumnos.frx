@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" TextQuality="Regular">
+	<Dictionary>
+		<TableDataSource Name="Alumnos" Enabled="true">
+			<Column Name="Nombre" DataType="System.String"/>
+			<Column Name="Apellido" DataType="System.String"/>
+		</TableDataSource>
+	</Dictionary>
+	<ReportPage Name="Page1">
+		<ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+			<TextObject Name="Text1" Left="0" Top="0" Width="200" Height="56.7" Text="Alumnos" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+		</ReportTitleBand>
+		<DataBand Name="Data1" Top="56.7" Width="718.2" Height="18.9" DataSource="Alumnos">
+			<TextObject Name="TextNombre" Left="0" Top="0" Width="359.1" Height="18.9" Text="[Alumnos.Nombre]" Font="Arial, 10pt"/>
+			<TextObject Name="TextApellido" Left="359.1" Top="0" Width="359.1" Height="18.9" Text="[Alumnos.Apellido]" Font="Arial, 10pt"/>
+		</DataBand>
+	</ReportPage>
+</Report>
