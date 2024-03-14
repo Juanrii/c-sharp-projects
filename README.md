@@ -1,5 +1,12 @@
 # c-sharp-projects
 University projects (C# &amp; .Net)
+
+# 2024 - ExpoReportes - FastReport
+![Screenshot 2024-03-13 at 22 51 17](https://github.com/Juanrii/c-sharp-projects/assets/55418564/d05ed1ba-5f90-4463-9e98-47b7abf3716b)
+![Screenshot 2024-03-13 at 22 52 03](https://github.com/Juanrii/c-sharp-projects/assets/55418564/cda88136-c283-43f5-9661-341dd1b62689)
+![Screenshot 2024-03-13 at 22 52 27](https://github.com/Juanrii/c-sharp-projects/assets/55418564/3bd5e38b-12fb-48ca-87c8-0a433370b407)
+
+
 # 2024 - GestionAutomovilesCapas
 ![Automoviles](https://github.com/Juanrii/c-sharp-projects/assets/55418564/93cefb15-4962-4a92-bd34-8ebbcc9c160d)
 # 2023 - JuanSinTacc
