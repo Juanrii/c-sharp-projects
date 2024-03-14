@@ -1,4 +1,4 @@
-﻿namespace ExpoReportes
+namespace ExpoReportes
 {
     partial class Form1
     {
@@ -44,16 +44,19 @@
             // 
             // btnPrevisualizar
             // 
+            this.btnPrevisualizar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnPrevisualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisualizar.Location = new System.Drawing.Point(39, 236);
             this.btnPrevisualizar.Name = "btnPrevisualizar";
             this.btnPrevisualizar.Size = new System.Drawing.Size(1187, 102);
             this.btnPrevisualizar.TabIndex = 0;
             this.btnPrevisualizar.Text = "Previsualizar Reporte";
-            this.btnPrevisualizar.UseVisualStyleBackColor = true;
+            this.btnPrevisualizar.UseVisualStyleBackColor = false;
             this.btnPrevisualizar.Click += new System.EventHandler(this.btnPrevisualizar_Click);
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox1.Location = new System.Drawing.Point(39, 55);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -62,22 +65,25 @@
             // 
             // btnExportPDF
             // 
+            this.btnExportPDF.BackColor = System.Drawing.Color.Gold;
+            this.btnExportPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportPDF.Location = new System.Drawing.Point(39, 516);
             this.btnExportPDF.Name = "btnExportPDF";
             this.btnExportPDF.Size = new System.Drawing.Size(1187, 170);
             this.btnExportPDF.TabIndex = 2;
             this.btnExportPDF.Text = "Exportar PDF";
-            this.btnExportPDF.UseVisualStyleBackColor = true;
+            this.btnExportPDF.UseVisualStyleBackColor = false;
             this.btnExportPDF.Click += new System.EventHandler(this.btnExportPDF_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnExportPDF);
             this.groupBox1.Controls.Add(this.btnPrevisualizar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(5, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1271, 725);
             this.groupBox1.TabIndex = 3;
@@ -86,19 +92,21 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(42, 376);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(1187, 102);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar Cambios";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 767);
+            this.ClientSize = new System.Drawing.Size(1277, 730);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "UAI - DESARROLLO Y ARQUITECTURA DE SOFTWARE";
