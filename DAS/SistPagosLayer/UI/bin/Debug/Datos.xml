@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Persona">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Documento" type="xs:string" />
+                <xs:element name="Nombre" type="xs:string" minOccurs="0" />
+                <xs:element name="Apellido" type="xs:string" minOccurs="0" />
+                <xs:element name="FechaNac" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Extranjero" type="xs:boolean" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Pago">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PagoId" type="xs:int" />
+                <xs:element name="Fecha" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Importe" type="xs:decimal" minOccurs="0" />
+                <xs:element name="PersonaDoc" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//Persona" />
+        <xs:field xpath="Documento" />
+      </xs:unique>
+      <xs:unique name="Pago_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//Pago" />
+        <xs:field xpath="PagoId" />
+      </xs:unique>
+      <xs:keyref name="FK_Persona_Pago" refer="Constraint1">
+        <xs:selector xpath=".//Pago" />
+        <xs:field xpath="PersonaDoc" />
+      </xs:keyref>
+    </xs:element>
+  </xs:schema>
+</NewDataSet>
