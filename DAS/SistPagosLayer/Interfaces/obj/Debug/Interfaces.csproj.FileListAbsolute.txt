@@ -1,0 +1,6 @@
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\Interfaces\bin\Debug\Interfaces.dll
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\Interfaces\bin\Debug\Interfaces.pdb
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\Interfaces\obj\Debug\Interfaces.csproj.AssemblyReference.cache
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\Interfaces\obj\Debug\Interfaces.dll
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\Interfaces\obj\Debug\Interfaces.pdb
