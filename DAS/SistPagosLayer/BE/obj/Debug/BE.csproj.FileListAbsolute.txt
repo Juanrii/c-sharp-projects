@@ -1,0 +1,6 @@
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\BE\bin\Debug\BE.dll
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\BE\bin\Debug\BE.pdb
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\BE\obj\Debug\BE.dll
+Z:\Documents\juan\uai\Segundo Año\LUG VERANO 2024\RiosJuanIgnacioSegundoParcial\SistPagosLayer\BE\obj\Debug\BE.pdb
